@@ -4,3 +4,14 @@ description: "Lian Lian"
 url: "http://lian0090.github.io"
 
 
+collections:
+- python
+- jekyll
+
+collections:
+  python:
+    output: true
+    permalink: /python/:path/
+  jekyll:
+    output: true
+    permalink: /jekyll/:path/

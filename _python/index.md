@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Python memo
 ---
 #Python memo
  
@@ -74,9 +75,10 @@ Sometimes, when you try to import pandas, it will report ImportError: cannot imp
 
 If one method does not correctly install your package, you can try another method
 
-### post_url  File handles.html
+### 
+[File handles](../File handles.html)
 ## Packages  
-### [rpy2](post_url ./rpy2.html)
+### [rpy2]({{rpy2.url}})
 
 ##Slicing and Dicing
- [slicing and Dicing](post_url slicing and dicing.html)
+ [slicing and Dicing](../slicing and Dicing.html)
