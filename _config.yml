@@ -5,13 +5,9 @@ url: "http://lian0090.github.io"
 
 
 collections:
-- python
-- jekyll
+- techmemo
 
 collections:
-  python:
+  techmemo:
     output: true
-    permalink: /python/:path/
-  jekyll:
-    output: true
-    permalink: /jekyll/:path/
+    permalink: /techmemo/:path/

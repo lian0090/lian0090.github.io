@@ -1,0 +1,85 @@
+<dl class="method">
+<dt id="pandas.DataFrame.xs">
+<tt class="descclassname">DataFrame.</tt><tt class="descname">xs</tt><big>(</big><em>key</em>, <em>axis=0</em>, <em>level=None</em>, <em>copy=True</em>, <em>drop_level=True</em><big>)</big><a class="headerlink" href="#pandas.DataFrame.xs" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a cross-section (row(s) or column(s)) from the Series/DataFrame.
+Defaults to cross-section on the rows (axis=0).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name">
+<col class="field-body">
+</colgroup><tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>key</strong> : object</p>
+<blockquote>
+<div><p>Some label contained in the index, or partially in a MultiIndex</p>
+</div></blockquote>
+<p><strong>axis</strong> : int, default 0</p>
+<blockquote>
+<div><p>Axis to retrieve cross-section on</p>
+</div></blockquote>
+<p><strong>level</strong> : object, defaults to first n levels (n=1 or len(key))</p>
+<blockquote>
+<div><p>In case of a key partially contained in a MultiIndex, indicate
+which levels are used. Levels can be referred by label or position.</p>
+</div></blockquote>
+<p><strong>copy</strong> : boolean, default True</p>
+<blockquote>
+<div><p>Whether to make a copy of the data</p>
+</div></blockquote>
+<p><strong>drop_level</strong> : boolean, default True</p>
+<blockquote>
+<div><p>If False, returns object with same levels as self.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first last"><strong>xs</strong> : Series or DataFrame</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">   A  B  C</span>
+<span class="go">a  4  5  2</span>
+<span class="go">b  4  0  9</span>
+<span class="go">c  9  7  3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="s">'a'</span><span class="p">)</span>
+<span class="go">A    4</span>
+<span class="go">B    5</span>
+<span class="go">C    2</span>
+<span class="go">Name: a</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="s">'C'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">a    2</span>
+<span class="go">b    9</span>
+<span class="go">c    3</span>
+<span class="go">Name: C</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="s">'a'</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">     A  B  C</span>
+<span class="go">a  100  5  2</span>
+<span class="go">b    4  0  9</span>
+<span class="go">c    9  7  3</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">                    A  B  C  D</span>
+<span class="go">first second third</span>
+<span class="go">bar   one    1      4  1  8  9</span>
+<span class="go">      two    1      7  5  5  0</span>
+<span class="go">baz   one    1      6  6  8  0</span>
+<span class="go">      three  2      5  3  5  3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">xs</span><span class="p">((</span><span class="s">'baz'</span><span class="p">,</span> <span class="s">'three'</span><span class="p">))</span>
+<span class="go">       A  B  C  D</span>
+<span class="go">third</span>
+<span class="go">2      5  3  5  3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="s">'one'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">             A  B  C  D</span>
+<span class="go">first third</span>
+<span class="go">bar   1      4  1  8  9</span>
+<span class="go">baz   1      6  6  8  0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">xs</span><span class="p">((</span><span class="s">'baz'</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s">'third'</span><span class="p">])</span>
+<span class="go">        A  B  C  D</span>
+<span class="go">second</span>
+<span class="go">three   5  3  5  3</span>
+</pre></div>
+</div>
+</dd></dl>
