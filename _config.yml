@@ -6,12 +6,5 @@ description: "Lian Lian"
 url: "http://lian0090.github.io"
 
 
-collections:
-- techmemo
-
-collections:
-  techmemo:
-    output: true
-
 gems:
   - jekyll-sitemap

@@ -4,27 +4,40 @@
     <loc>http://lian0090.github.io/contact.html</loc>
   </url>
   <url>
-    <loc>http://lian0090.github.io/work/</loc>
+    <loc>http://lian0090.github.io/techmemo/jekyll/</loc>
   </url>
   <url>
     <loc>http://lian0090.github.io/</loc>
   </url>
   <url>
-    <loc>http://lian0090.github.io/work/jekyll/</loc>
-  </url>
-  <url>
-    <loc>http://lian0090.github.io/techmemo/R/</loc>
+    <loc>http://lian0090.github.io/techmemo/python/</loc>
   </url>
   <url>
     <loc>http://lian0090.github.io/techmemo/bash/</loc>
   </url>
   <url>
-    <loc>http://lian0090.github.io/techmemo/jekyll/</loc>
+    <loc>http://lian0090.github.io/techmemo/R/</loc>
   </url>
   <url>
-    <loc>http://lian0090.github.io/techmemo/python/</loc>
+    <loc>http://lian0090.github.io/techmemo/</loc>
   </url>
   <url>
     <loc>http://lian0090.github.io/techmemo/python/rpy2.html</loc>
+  </url>
+  <url>
+    <loc>http://lian0090.github.io/techmemo/python/common functions.html</loc>
+    <lastmod>2014-06-12T23:03:30-04:00</lastmod>
+  </url>
+  <url>
+    <loc>http://lian0090.github.io/techmemo/python/DataFrame.xs.html</loc>
+    <lastmod>2014-07-31T12:21:07-04:00</lastmod>
+  </url>
+  <url>
+    <loc>http://lian0090.github.io/techmemo/python/File handles.html</loc>
+    <lastmod>2014-06-12T12:28:18-04:00</lastmod>
+  </url>
+  <url>
+    <loc>http://lian0090.github.io/techmemo/python/slicing and dicing.html</loc>
+    <lastmod>2014-07-31T12:23:28-04:00</lastmod>
   </url>
 </urlset>
