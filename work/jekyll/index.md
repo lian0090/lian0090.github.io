@@ -3,10 +3,6 @@ title: Jekyll
 layout: default
 ---
 
-#Supported documents
-Jekyll supported three kind of documents. Posts, Pages and Collections
-
-
 #Collections
 The files with the correct front matter are called documents. And these documents will have document.url that you can include into your markdown link. 
 

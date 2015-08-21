@@ -1,0 +1,27 @@
+<html>
+ <head>
+  <title>Python memo</title>
+ </head>
+ <body>
+
+<h1>Change working directory</h1>
+cd ~
+pwd 
+import os
+os.chdir(os.environ['HOME'])
+  <p>You're confusing what <code>os.system</code> can do and what Python can do. <code>os.system</code> understands that <code>$dir_name</code> is a variable named <code>dir_name</code>. It checks its environment variables and finds it.</p>
+
+<p>Python has no idea what <code>"$dir_name"</code> is, and assumes you're using a literal string. It tries to change the directory to that, and fails since there is no literal directory <code>"$dir_name"</code>.</p>
+
+<p>Instead, do:</p>
+
+<pre style="" class="lang-py prettyprint prettyprinted"><code><span class="pln">index </span><span class="pun">=</span><span class="pln"> </span><span class="str">'999'</span><span class="pln">
+os</span><span class="pun">.</span><span class="pln">environ</span><span class="pun">[</span><span class="str">'dir_name'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Directory_Name_"</span><span class="pun">+</span><span class="pln">index
+os</span><span class="pun">.</span><span class="pln">chdir</span><span class="pun">(</span><span class="pln">os</span><span class="pun">.</span><span class="pln">environ</span><span class="pun">[</span><span class="str">'dir_name'</span><span class="pun">])</span></code></pre>
+<p>You could also have <code>os.system</code> change your directory, since it knows what <code>"$dir_name"</code> means:</p>
+
+<h1>File types</h1>
+JSON files does not preserve the dataframe type. It will change dataframes into lists. Row names of dataframes will not be preserved. So, it is better to save dataframe as .csv file and the list and vector types in JSON files.
+
+ </body>
+</html>

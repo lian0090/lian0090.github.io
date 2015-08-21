@@ -12,7 +12,6 @@ collections:
 collections:
   techmemo:
     output: true
-    permalink: /techmemo/:path/
 
 gems:
   - jekyll-sitemap
