@@ -1,43 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://lian0090.github.io/techmemo/python/2015/08/21/rpy2.html</loc>
+    <lastmod>2015-08-21T00:00:00-04:00</lastmod>
+  </url>
+  <url>
+    <loc>http://lian0090.github.io/techmemo/python/2015/08/21/python.html</loc>
+    <lastmod>2015-08-21T00:00:00-04:00</lastmod>
+  </url>
+  <url>
+    <loc>http://lian0090.github.io/techmemo/jekyll/2015/08/21/jekyll.html</loc>
+    <lastmod>2015-08-21T00:00:00-04:00</lastmod>
+  </url>
+  <url>
+    <loc>http://lian0090.github.io/techmemo/bash/2015/08/21/bash.html</loc>
+    <lastmod>2015-08-21T00:00:00-04:00</lastmod>
+  </url>
+  <url>
+    <loc>http://lian0090.github.io/techmemo/r/2015/08/21/R.html</loc>
+    <lastmod>2015-08-21T00:00:00-04:00</lastmod>
+  </url>
+  <url>
     <loc>http://lian0090.github.io/contact.html</loc>
   </url>
   <url>
-    <loc>http://lian0090.github.io/techmemo/jekyll/</loc>
+    <loc>http://lian0090.github.io/ExampleCode/</loc>
   </url>
   <url>
     <loc>http://lian0090.github.io/</loc>
-  </url>
-  <url>
-    <loc>http://lian0090.github.io/techmemo/python/</loc>
-  </url>
-  <url>
-    <loc>http://lian0090.github.io/techmemo/bash/</loc>
-  </url>
-  <url>
-    <loc>http://lian0090.github.io/techmemo/R/</loc>
-  </url>
-  <url>
-    <loc>http://lian0090.github.io/techmemo/</loc>
-  </url>
-  <url>
-    <loc>http://lian0090.github.io/techmemo/python/rpy2.html</loc>
-  </url>
-  <url>
-    <loc>http://lian0090.github.io/techmemo/python/common functions.html</loc>
-    <lastmod>2014-06-12T23:03:30-04:00</lastmod>
-  </url>
-  <url>
-    <loc>http://lian0090.github.io/techmemo/python/DataFrame.xs.html</loc>
-    <lastmod>2014-07-31T12:21:07-04:00</lastmod>
-  </url>
-  <url>
-    <loc>http://lian0090.github.io/techmemo/python/File handles.html</loc>
-    <lastmod>2014-06-12T12:28:18-04:00</lastmod>
-  </url>
-  <url>
-    <loc>http://lian0090.github.io/techmemo/python/slicing and dicing.html</loc>
-    <lastmod>2014-07-31T12:23:28-04:00</lastmod>
   </url>
 </urlset>
