@@ -1,7 +1,7 @@
 name: "Lian Lian"
 description: "Lian Lian"
 
-url: "http://lian0090.github.io"
+url: "http://lianliansite.com"
 
 
 collections:
@@ -11,3 +11,6 @@ collections:
   techmemo:
     output: true
     permalink: /techmemo/:path/
+
+gems:
+  - jekyll-sitemap
