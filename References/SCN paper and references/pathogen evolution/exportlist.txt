@@ -1,0 +1,210 @@
+%0 Journal Article
+%A Bisgrove, S. R.
+%A Simonich, M. T.
+%A Smith, N. M.
+%A Sattler, A.
+%A Innes, R. W.
+%D 1994
+%T A DISEASE RESISTANCE GENE IN ARABIDOPSIS WITH SPECIFICITY FOR 2 DIFFERENT PATHOGEN AVIRULENCE GENES
+%B Plant Cell
+%V 6
+%N 7
+%P 927-933
+%! A DISEASE RESISTANCE GENE IN ARABIDOPSIS WITH SPECIFICITY FOR 2 DIFFERENT PATHOGEN AVIRULENCE GENES
+%@ 1040-4651
+%M WOS:A1994NX89600003
+%X The RPS3 and RPM1 disease resistance loci of Arabidopsis confer resistance to Pseudomonas syringae strains that carry the avirulence genes avrB and avrRpm1, respectively. We have previously shown that RPS3 and RPM1 are closely linked genetically. Here, we show that RPS3 and RPM1 are in fact the same gene. We screened a mutagenized Arabidopsis population with a R syringae strain carrying avrB and found 12 susceptible mutants. All 12 mutants were also susceptible to an isogenic strain carrying avrRpm1, indicating a loss of both RPS3 and RPM1 functions. No mutants were recovered that lost only RPS3 function. Genetic analysis of four independent mutants revealed that the lesions were in RPS3 Thus, a single gene in Arabidopsis confers resistance that is specific to two distinct pathogen avirulence genes - a gene-for-genes interaction. This observation suggests that the RPS3/RPM1 gene product can bind multiple pathogen ligands, or alternatively, that it does not function as a receptor.
+%Z Times Cited: 149
+%U <Go to ISI>://WOS:A1994NX89600003
+
+
+
+%0 Journal Article
+%A Catanzariti, A. M.
+%A Dodds, P. N.
+%A Lawrence, G. J.
+%A Ayliffe, M. A.
+%A Ellis, J. G.
+%D 2006
+%T Haustorially expressed secreted proteins from flax rust are highly enriched for avirulence elicitors
+%B Plant Cell
+%V 18
+%N 1
+%P 243-256
+%! Haustorially expressed secreted proteins from flax rust are highly enriched for avirulence elicitors
+%@ 1040-4651
+%R 10.1105/tpc.105.035980
+%M WOS:000234300500017
+%X Rust fungi, obligate biotrophs that cause disease and yield losses in crops such as cereals and soybean (Glycine max), obtain nutrients from the host through haustoria, which are specialized structures that develop within host cells. Resistance of flax (Linum usitatissimum) to flax rust (Melampsora lini) involves the induction of a hypersensitive cell death response at haustoria formation sites, governed by gene-for-gene recognition between host resistance and pathogen avirulence genes. We identified genes encoding haustorially expressed secreted proteins (HESPs) by screening a flax rust haustorium-specific cDNA library. Among 429 unigenes, 21 HESPs were identified, one corresponding to the AvrL567 gene. Three other HESPs cosegregated with the independent AvrM, AvrP4, and AvrP123 loci. Expression of these genes in flax induced resistance gene-mediated cell death with the appropriate specificity, confirming their avirulence activity. AvrP4 and AvrP123 are Cys-rich proteins, and AvrP123 contains a Kazal Ser protease inhibitor signature, whereas AvrM contains no Cys residues. AvrP4 and AvrM induce cell death when expressed intracellularly, suggesting their translocation into plant cells during infection. However, secreted AvrM and AvrP4 also induce necrotic responses, with secreted AvrP4 more active than intracellular AvrP4, possibly as a result of enhanced formation of endoplasmic reticulum-dependent disulfide bonds. Addition of an endoplasmic reticulum retention signal inhibited AvrM-induced necrosis, suggesting that both AvrM and AvrP4 can re-enter the plant cell after secretion in the absence of the pathogen.
+%Z Times Cited: 120
+%U <Go to ISI>://WOS:000234300500017
+
+
+
+%0 Journal Article
+%A Chinchilla, D.
+%A Bauer, Z.
+%A Regenass, M.
+%A Boller, T.
+%A Felix, G.
+%D 2006
+%T The Arabidopsis receptor kinase FLS2 binds flg22 and determines the specificity of flagellin perception
+%B Plant Cell
+%V 18
+%N 2
+%P 465-476
+%! The Arabidopsis receptor kinase FLS2 binds flg22 and determines the specificity of flagellin perception
+%@ 1040-4651
+%R 10.1105/tpc.105.036574
+%M WOS:000235368100016
+%X Flagellin, the main building block of the bacterial flagellum, acts as a pathogen-associated molecular pattern triggering the innate immune response in animals and plants. In Arabidopsis thaliana, the Leu-rich repeat transmembrane receptor kinase FLAGELLIN SENSITIVE2 (FLS2) is essential for flagellin perception. Here, we demonstrate the specific interaction of the elicitor-active epitope flg22 with the FLS2 protein by chemical cross-linking and immunoprecipitation. The functionality of this receptor was further tested by heterologous expression of the Arabidopsis FLS2 gene in tomato ( Lycopersicon esculentum) cells. The perception of flg22 in tomato differs characteristically from that in Arabidopsis. Expression of Arabidopsis FLS2 conferred an additional flg22-perception system on the cells of tomato, which showed all of the properties characteristic of the perception of this elicitor in Arabidopsis. In summary, these results show that FLS2 constitutes the pattern-recognition receptor that determines the specificity of flagellin perception.
+%Z Times Cited: 103
+%U <Go to ISI>://WOS:000235368100016
+
+
+
+%0 Journal Article
+%A He, S. Y.
+%A Huang, H. C.
+%A Collmer, A.
+%D 1993
+%T PSEUDOMONAS-SYRINGAE PV SYRINGAE HARPIN (PSS) - A PROTEIN THAT IS SECRETED VIA THE HRP PATHWAY AND ELICITS THE HYPERSENSITIVE RESPONSE IN PLANTS
+%B Cell
+%V 73
+%N 7
+%P 1255-1266
+%! PSEUDOMONAS-SYRINGAE PV SYRINGAE HARPIN (PSS) - A PROTEIN THAT IS SECRETED VIA THE HRP PATHWAY AND ELICITS THE HYPERSENSITIVE RESPONSE IN PLANTS
+%@ 0092-8674
+%M WOS:A1993LL20900003
+%X The ability of P. syringae to elicit the hypersensitive response in nonhost plants or pathogenesis in hosts is controlled by hrp genes. The P. syringae pv. syringae 61 hrpZ gene encodes harpin(Pss), a 34.7 kd extracellular protein that elicits hypersensitive necrosis in tobacco and other plants. Harpin(Pss) is heat stable, glycine rich, dissimilar in amino acid sequence to any known protein, produced only in apoplastic fluid-mimicking minimal media, and secreted in a HrpH-dependent manner. The carboxy-terminal 148 amino acid portion of harpin(Pss) contains two directly repeated sequences of GGGLGTP and QTGT and is sufficient and necessary for elicitor activity. The necrosis elicited by harpin(Pss) is an active response of the plant, which can be inhibited by alpha-amanitin, cycloheximide, lanthanum chloride, or sodium vanadate.
+%Z Times Cited: 297
+%U <Go to ISI>://WOS:A1993LL20900003
+
+
+
+%0 Journal Article
+%A Heath, M. C.
+%D 2000
+%T Nonhost resistance and nonspecific plant defenses
+%B Current Opinion in Plant Biology
+%V 3
+%N 4
+%P 315-319
+%! Nonhost resistance and nonspecific plant defenses
+%@ 1369-5266
+%M WOS:000088052900008
+%X In the past year, most of the advances in our understanding of nonhost resistance to plant pathogens have been incremental. Highlights include the discovery of a general bacterial elicitor of plant defenses, the description of more similarities between the hypersensitive response and animal programmed cell death, and a growing appreciation of the cell wall as the site of initiation and expression of nonhost resistance towards fungi.
+%Z Times Cited: 179
+%U <Go to ISI>://WOS:000088052900008
+
+
+
+%0 Journal Article
+%A Joosten, Mhaj
+%A Cozijnsen, T. J.
+%A Dewit, Pjgm
+%D 1994
+%T HOST-RESISTANCE TO A FUNGAL TOMATO PATHOGEN LOST BY A SINGLE BASE-PAIR CHANGE IN AN AVIRULENCE GENE
+%B Nature
+%V 367
+%N 6461
+%P 384-386
+%! HOST-RESISTANCE TO A FUNGAL TOMATO PATHOGEN LOST BY A SINGLE BASE-PAIR CHANGE IN AN AVIRULENCE GENE
+%@ 0028-0836
+%M WOS:A1994MT54000073
+%X HOST genotype specificity in interactions between biotrophic pathogens and plants in most cases complies with the gene-for-gene model1; success or failure of infection is determined by absence or presence of complementary genes, avirulence and resistance genes, in the pathogen and host plant, respectively. Resistance, expressed by the induction of a hypersensitive response in the host, is envisaged to be based on recognition of the pathogen, mediated through direct interaction between products of pathogen avirulence genes (the so-called race-specific elicitors) and receptors in the host plant, the putative products of resistance genes1. The interaction between the biotrophic fungus Cladosporium fulvum and its only host, tomato (Lycopersicon esculentum), is a well-established model system for studying fungus-plant gene-for-gene relationships1. Here we report the isolation of race-specific elicitor AVR4 of C. fulvum and the cloning of its encoding avirulence gene. We present evidence that, in nature, a single base-pair change in this avirulence gene leads to virulence of races previously avirulent on tomato genotypes carrying the complementary Cf4 resistance gene.
+%Z Times Cited: 215
+%U <Go to ISI>://WOS:A1994MT54000073
+
+
+
+%0 Journal Article
+%A Journet, E. P.
+%A Pichon, M.
+%A Dedieu, A.
+%A Debilly, F.
+%A Truchet, G.
+%A Barker, D. G.
+%D 1994
+%T RHIZOBIUM-MELILOTI NOD FACTORS ELICIT CELL-SPECIFIC TRANSCRIPTION OF THE ENOD12 GENE IN TRANSGENIC ALFALFA
+%B Plant Journal
+%V 6
+%N 2
+%P 241-249
+%! RHIZOBIUM-MELILOTI NOD FACTORS ELICIT CELL-SPECIFIC TRANSCRIPTION OF THE ENOD12 GENE IN TRANSGENIC ALFALFA
+%@ 0960-7412
+%M WOS:A1994PB71800011
+%X Extracellular lipo oligosaccharides of Rhizobium, known as Nod factors, play a key role in the molecular signal exchange which leads to the specific nitrogen-fixing symbiotic association between the soil microbe and its host legume. The biological activity of Nod factors and their perception by the host plant during the earliest stages of the Rhizobium/legume interaction have been studied using transgenic alfalfa carrying a fusion between the promoter of the early nodulin gene MtENOD12 and the beta-glucuronidase (GUS) reporter gene. Histochemical staining has shown that GUS accumulates specifically in the differentiating root epidermis, prior to and during root hair emergence, within 2-3 h following the addition of purified Rhizobium meliloti Nod factors. This precocious transcriptional activation of the MfENOD12 gene, reminiscent of that observed after inoculation with intact Rhizobium, implies that the Nod factor signal can be perceived at a developmental stage preceding root hair formation. GUS activity can be detected following treatment with a wide range of R. meliloti Nod factor concentrations down to 10(-13) M, and furthermore, this rapid response to the bacterial elicitor appears to be non-systemic. Significantly, MtENOD12-GUS expression is not observed after inoculation with a R. meliloti nodH mutant which synthesizes exclusively non-sulphated Nod factors. Indeed purified Nod factors which lack the sulphate substituent are approximately 1000-fold less active than their sulphated counterparts. Thus, the triggering of ENOD12 transcription in the alfalfa root epidermis is a rapid molecular response which is subject to the same host-specificity determinant (Nod factor sulphation) that governs the interaction between alfalfa and its bacterial symbiont.
+%Z Times Cited: 119
+%U <Go to ISI>://WOS:A1994PB71800011
+
+
+
+%0 Journal Article
+%A Keen, N. T.
+%D 1990
+%T GENE-FOR-GENE COMPLEMENTARITY IN PLANT-PATHOGEN INTERACTIONS
+%B Annual Review of Genetics
+%V 24
+%P 447-463
+%! GENE-FOR-GENE COMPLEMENTARITY IN PLANT-PATHOGEN INTERACTIONS
+%@ 0066-4197
+%M WOS:A1990EN96900019
+%Z Times Cited: 472
+%U <Go to ISI>://WOS:A1990EN96900019
+
+
+
+%0 Journal Article
+%A Keen, N. T.
+%D 1992
+%T THE MOLECULAR-BIOLOGY OF DISEASE RESISTANCE
+%B Plant Molecular Biology
+%V 19
+%N 1
+%P 109-122
+%! THE MOLECULAR-BIOLOGY OF DISEASE RESISTANCE
+%@ 0167-4412
+%M WOS:A1992JA13200008
+%Z Times Cited: 129
+%U <Go to ISI>://WOS:A1992JA13200008
+
+
+
+%0 Journal Article
+%A Lauge, R.
+%A De Wit, Pjgm
+%D 1998
+%T Fungal avirulence genes: Structure and possible functions
+%B Fungal Genetics and Biology
+%V 24
+%N 3
+%P 285-297
+%! Fungal avirulence genes: Structure and possible functions
+%@ 1087-1845
+%M WOS:000076505500001
+%X Avirulence (Avr) genes exist in many fungi that share a gene-for-gene relationship with their host plant. They represent unique genetic determinants that prevent fungi from causing disease on plants that possess matching resistance (R) genes. Interaction between elicitors (primary or secondary products of Avr genes) and host receptors in resistant plants causes induction of various defense responses often involving a hypersensitive response. Avr genes have been successfully isolated by reverse genetics and positional cloning. Five cultivar-specific Avr genes (Avr4, Avr9, and Ecp2 from Cladosporium fulvum; nip1 from Rhynchosporium secalis; and AVr2-YAMO from Magnaporthe grisea) and three species-specific Avr genes (PWL1 and PWL2 from M. grisea and inf1 from Phytophthora infestans) have been cloned. Isolation of additional Avr genes from these fungi, but also from other fungi such as Uromyces vignae, Melampsora lini, Phytophthora sojae, and Leptosphaeria maculans, is in progress. Molecular analyses of nonfunctional Avr gene alleles show that these originate from deletions or mutations in the open reading frame or the promoter sequence of an Avr gene. Although intrinsic biological functions of most Avr gene products are still unknown, recent studies have shown that two Avr genes, nip1 and Ecp2, encode products that are important pathogenicity factors. All fungal Avr genes cloned so far have been demonstrated or predicted to encode extracellular proteins. Current studies focus on unraveling the mechanisms of perception of avirulence factors by plant receptors. The exploitation of Avr genes and the matching R genes in engineered resistance is also discussed. (C) 1998 Academic Press.
+%Z Times Cited: 89
+%U <Go to ISI>://WOS:000076505500001
+
+
+
+%0 Journal Article
+%A Vandenackerveken, Gfjm
+%A Vankan, J. A. L.
+%A Dewit, Pjgm
+%D 1992
+%T MOLECULAR ANALYSIS OF THE AVIRULENCE GENE AVR9 OF THE FUNGAL TOMATO PATHOGEN CLADOSPORIUM-FULVUM FULLY SUPPORTS THE GENE-FOR-GENE HYPOTHESIS
+%B Plant Journal
+%V 2
+%N 3
+%P 359-366
+%! MOLECULAR ANALYSIS OF THE AVIRULENCE GENE AVR9 OF THE FUNGAL TOMATO PATHOGEN CLADOSPORIUM-FULVUM FULLY SUPPORTS THE GENE-FOR-GENE HYPOTHESIS
+%@ 0960-7412
+%M WOS:A1992HV42100011
+%X The interaction between the fungal pathogen Clado. sporium fulvum and tomato is supposed to have a gene-for-gene basis. Races of C. fulvum which have 'Overcome' the resistance gene Cf9 of tomato, lack the avirulence gene avr9 which encodes a race-specific peptide elicitor. Races avirulent on tomato genotypes carrying the resistance gene Cf9 produce the race-specific peptide elicitor, which induces the hypersensitive response (HR) on those genotypes. The causal relationship between the presence of a functional avr9 gene and avirulence on tomato genotype Cf9 was demonstrated by cloning of the avr9 gene and subsequent transformation of C. fulvum A race virulent on tomato genotype Cf9 was shown to become avirulent by transformation with the cloned avr9 gene. These results clearly demonstrate that the avr9 gene is responsible for cultivar specificity on tomato genotype Cf9 and fully support the gene-for-gene hypothesis. The avr9 gene is the first fungal avirulence gene to be cloned.
+%Z Times Cited: 166
+%U <Go to ISI>://WOS:A1992HV42100011
+
+
+
