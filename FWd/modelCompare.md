@@ -13,6 +13,7 @@ OLShmu=lmFWhmu(y,VAR,ENV)
 head(OLSh0$b)
 head(OLShmu$b)
 ```
+
 b for OLS are the same. 
 ```R
 > head(OLSh0$b)
