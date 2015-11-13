@@ -2,9 +2,7 @@
 layout: home
 ---
 
-
 <div class="index-content background">
-
     <div class="section">
 <ul class="artical-cate">
 <li style="text-align:center"><a href="/techmemo"><span>Techmemo</span></a></li>
@@ -15,7 +13,7 @@ layout: home
         <div class="cate-bar"><span id="cateBar"></span></div>
 
         <ul class="artical-list">
-        {% for post in site.categories.techmemo %}
+        {% for post in site.categories.collection %}
             <li>
                 <h2>
                     <a href="{{ post.url }}">{{ post.title }}</a>
@@ -28,6 +26,3 @@ layout: home
     <div class="aside">
     </div>
 </div>
-
-
-
