@@ -2,7 +2,7 @@
 layout: home
 ---
 
-<div class="index-content opinion">
+<div class="index-content techmemo">
     <div class="section">
 <ul class="artical-cate">
 <li class="on"><a href="/"><span>blog</span></a></li>
