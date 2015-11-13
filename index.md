@@ -3,7 +3,9 @@ layout: home
 ---
 
 <div class="index-content background">
-    <div class="section">
+<div class="section">
+
+
         <ul class="artical-cate">
             <li style="text-align:center"><a href="/techmemo"><span>Techmemo</span></a></li>
             <li style="text-align:center"><a href="/project"><span>Project</span></a></li>

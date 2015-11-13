@@ -17,12 +17,32 @@
 </head>
 <body>
 
-    <div class="home-menu">
+
+
+   <div class="home-menu">
         <div class="home-icon-con">
-            <a class="home-menu-icon" href="/">Lian Lian </a>
-            <a class="home-follow" href="#" title="Contact Me">+</a>
+            <a class="home-menu-icon" href="/">Lian Lian </a>           
         </div>
-        <!-- 
+       
+<!--
+ 
+  <div>
+<script>
+  (function() {
+    var cx = '001502921916385974381:ylnbr82nqdm';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</div>
+-->
+         <!-- 
         Beiyuu's original link to douban 
         <div class="home-contact">
             <a href="http://www.weibo.com/beiyuu" target="_blank" style="margin-left:-5px;"><img src="http://www.weibo.com/favicon.ico" alt="" width="25"/></a>
@@ -30,6 +50,7 @@
             <a href="http://instagram.com/beiyuu/" target="_blank" style="text-align:right"><img src="http://d36xtkk24g8jdx.cloudfront.net/bluebar/00c6602/images/ico/favicon.ico" alt="" width="22"/></a>
         </div>
          -->
+
     </div>
 
     <link rel="stylesheet" href="/js/prettify/prettify.css" />
@@ -47,15 +68,33 @@
     <div class="entry">
         <h1 class="entry-title"><a href="/Output-random-effects-from-SKAT" title="Output random effects estimates from SKAT.">Output random effects estimates from SKAT.</a></h1>
         <p class="entry-date">2015-09-27</p>
-        <p>Output random effects estimates from SKAT.
-$\hat{\beta}=GZ'V^{-1}(y-X\hat\alpha)$.</p>
+        <!--mathJax  -->
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+
+
+<script type="text/javascript" src="path-to-mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<script type="text/javascript"
+src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<p>Output random effects estimates from SKAT.
+$$\hat{\beta}=GZ'V^{-1}(y-X\hat\alpha)$$</p>
 
 <p>G=diag($\tau_d$,$\Gamma$), Z=($Z_d$,W)</p>
 
-<p>$V^{-1}=V_d^{-1}-V_d^{-1}WC_\Gamma W'V_d^{-1}$</p>
+<p>$$V^{-1}=V_d^{-1}-V_d^{-1}WC_\Gamma W'V_d^{-1}$$</p>
 
 <ul>
-<li><p>$Z'V^{-1}(y-X\hat\alpha)=Z_d'V^{-1}(y-X\hat\alpha)+\underbrace{WV^{-1}(y-X\hat\alpha)}_{\text{calculated}}$</p></li>
+<li><p>$$Z'V^{-1}(y-X\hat\alpha)=Z_d'V^{-1}(y-X\hat\alpha)+\underbrace{WV^{-1}(y-X\hat\alpha)}_{\text{calculated}}$$</p></li>
 <li><p>$Z_d'V^{-1}(y-X\hat{\alpha})=Z_d'V_d^{-1}(y-X\hat\alpha)-Z_d'V_d^{-1}WC_{\Gamma} W'V_d^{-1}(y-X\hat\alpha)$</p></li>
 <li>$Z_d$ low rank
 
@@ -64,11 +103,15 @@ $\hat{\beta}=GZ'V^{-1}(y-X\hat\alpha)$.</p>
 <li> $Z_d'V_d^{-1}W$</li>
 </ul>
 </li>
-<li><p>$Z_d$ full rank</p>
+<li>$Z_d$ full rank
 
 <ul>
-<li> $Z_d'V_d^{-1}(y-X\hat\alpha)=Z_d'UD^{#}U'(y-X\hat\alpha)$</li>
-<li> $Z_d'V_d^{-1}W$</li>
+<li>$Z_d'V_d^{-1}(y-X\hat\alpha)$ =$Z_d'UD^# U'(y-X\hat\alpha)$
+
+<ul>
+<li>$Z_d'V_d^{-1}W$</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -139,5 +182,6 @@ $\hat{\beta}=GZ'V^{-1}(y-X\hat\alpha)$.</p>
             });
         })
     </script>
+
 </body>
 </html>
