@@ -1,5 +1,8 @@
 ---
-title: mixing of bh for GibbsIh0
+title: mixing in FWh0
+categories: [techmemo,python]
+tags: [techmemo,python]
+layout: post
 ---
 
 ```R
