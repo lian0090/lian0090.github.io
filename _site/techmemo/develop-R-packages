@@ -1,0 +1,2 @@
+##show non ASCII characters
+`tools::showNonASCII( readLines("wheat.Rd"))`
