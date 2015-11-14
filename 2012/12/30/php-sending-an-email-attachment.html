@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>
+        
+        PHP: Sending an Email Attachment | Aram Kocharyan
+        
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/lib/bootstrap/css/docs.css" rel="stylesheet">
+    <link href="/lib/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/syntax.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="/lib/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/assets/ico/favicon.png">
+
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+<!-- Navbar
+    ================================================== -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="/">Aram Kocharyan</a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="">
+                        <a href="/projects">Projects</a>
+                    </li>
+                    <li class="">
+                        <a href="/projects/crayon.html">Crayon</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container main-container">
+    <article class="single">
+    <div class="meta">
+        <h1 class="title">PHP: Sending an Email Attachment</h1>
+
+        <span class="date">30 Dec 2012</span>
+    </div>
+
+    <div id="post">
+        Here's my adapted version of sending an email attachment and allowing HTML and plain encodings.
+<pre class="lang:php decode:true  crayon-selected">emailFile(array(
+    'to' =&gt; 'your@email.com',
+    'from' =&gt; 'my@email.com',
+    'subject' =&gt; 'Some Subject',
+    'message' =&gt; '&lt;b&gt;Hello!&lt;/b&gt;',
+    'plain ' =&gt; 'Get a new email client!',
+    'file' =&gt; '/path/to/file'
+));</pre>
+<pre class="lang:php decode:true">/**
+ * Sends an email in html and plain encodings with a file attachment.
+ *
+ * @param array $args Arguments associative array
+ *      'to' (string)
+ *      'from' (string)
+ *      'subject' (optional string)
+ *      'message' (HTML string)
+ *      'plain' (optional plain string)
+ *      'file' (optional file path of the attachment)
+ * @see http://webcheatsheet.com/php/send_email_text_html_attachment.php
+ */
+function emailFile($args) {
+    $to = set_default($args['to']);
+    $from = set_default($args['from']);
+    $subject = set_default($args['subject'], '');
+    $message = set_default($args['message'], '');
+    $plain = set_default($args['plain'], '');
+    $file = set_default($args['file']);
+
+    // MIME
+    $random_hash = md5(date('r', time()));
+    $boundaryMixed = 'PHP-mixed-' . $random_hash;
+    $boundaryAlt = 'PHP-alt-' . $random_hash;
+    $charset = 'UTF-8';
+    $bits = '8bit';
+
+    // Headers
+    $headers = "MIME-Version: 1.0";
+    $headers .= "Reply-To: $to\r\n";
+    if ($from !== NULL) {
+        $headers .= "From: $from\r\n";
+    }
+    $headers .= "Content-Type: multipart/mixed; boundary=$boundaryMixed";
+    if ($file !== NULL) {
+        $info = pathinfo($file);
+        $filename = $info['filename'];
+        $extension = $info['extension'];
+        $contents = @file_get_contents($file);
+        if ($contents === FALSE) {
+            throw new Exception("File contents of '$file' could not be read");
+        }
+        $chunks = chunk_split(base64_encode($contents));
+        $attachment = &lt;&lt;&lt;EOT
+--$boundaryMixed
+Content-Type: application/$extension; name=$filename.$extension
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment
+
+$chunks
+EOT;
+    } else {
+        $attachment = '';
+    }
+
+    $body = &lt;&lt;&lt;EOT
+--$boundaryMixed
+Content-Type: multipart/alternative; boundary=$boundaryAlt
+
+--$boundaryAlt
+Content-Type: text/plain; charset="$charset"
+Content-Transfer-Encoding: $bits
+
+$plain
+
+--$boundaryAlt
+Content-Type: text/html; charset="$charset"
+Content-Transfer-Encoding: $bits
+
+$message
+--$boundaryAlt--
+
+$attachment
+
+--$boundaryMixed--
+EOT;
+
+    $result = @mail($to, $subject, $body, $headers);
+    return $result;
+}
+
+function set_default(&amp;$var, $default = NULL) {
+    return isset($var) ? $var : $default;
+}</pre>
+&nbsp;
+
+    </div>
+</article>
+
+</div>
+
+<!-- Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <p>Aram Kocharyan, <span class="date">2015</span>.</p>
+
+        <p>Built with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> + <a
+                href="http://twitter.github.io/bootstrap/" target="_blank">Bootstrap</a>. Hosted at <a
+                href="http://pages.github.com/">GitHub Pages.</a></p>
+    </div>
+</footer>
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/lib/jquery.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="/lib/holder.js"></script>
+<script src="/lib/google-code-prettify/prettify.js"></script>
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38031779-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</body>
+</html>

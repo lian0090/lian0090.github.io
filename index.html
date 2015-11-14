@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>
+        
+        Aram Kocharyan
+        
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/lib/bootstrap/css/docs.css" rel="stylesheet">
+    <link href="/lib/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/syntax.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="/lib/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/assets/ico/favicon.png">
+
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+<!-- Navbar
+    ================================================== -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="/">Aram Kocharyan</a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="">
+                        <a href="/projects">Projects</a>
+                    </li>
+                    <li class="">
+                        <a href="/projects/crayon.html">Crayon</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container main-container">
+    <div id="home" class="posts">
+    
+    <article  class="first" >
+        <div class="meta">
+            <a class="title" href="/2013/05/28/jekyll.html"><h3>Hello Jekyll, Goodbye Wordpress</h3></a>
+            <span class="date">28 May 2013</span></li>
+        </div>
+        
+            <div class="content">
+                <p>So my Wordpress site got hacked rather badly recently and 000webhost canceled my free hosting:</p>
+
+<p><img src="/assets/img/2013/05/site-down.png" alt="Site Down" /></p>
+
+<p>Realising the amount of effort I put into writing templates, uploading huge amounts of files and using crappy FTP connections, I looked for a better way to post stuff.</p>
+
+<p>Jekyll is a static website generator written in Ruby, is very light and didn’t take nearly as much time to install, even though I had to set up DNS records again.</p>
+
+<ol>
+  <li>
+    <p>Take a look at the <a href="https://github.com/aramkocharyan/aramkocharyan.github.io/tree/source">source branch</a> of this website.</p>
+  </li>
+  <li>
+    <p>Fork the repo and checkout both the <code>source</code> and <code>master</code> branches.</p>
+  </li>
+  <li>
+    <p>Make some changes to the site in the <code>source</code> branch and push them.</p>
+  </li>
+  <li>
+    <p>Run <a href="https://github.com/aramkocharyan/aramkocharyan.github.io/blob/source/publish.sh">publish.sh</a>, which will build the site in the <code>master</code> branch and push it.</p>
+  </li>
+</ol>
+
+<p>If you’re hosting a <strong>Project Page</strong> instead of a <strong>User Page</strong>, you need to push to a <code>gh-pages</code> branch instead, so edit <code>publish.sh</code> to your needs. See the <a href="https://help.github.com/articles/user-organization-and-project-pages">GitHub Pages guide</a>.</p>
+
+<p>This has some setbacks - even though I installed the Wordpress importer like so:</p>
+
+<pre><code>sudo gem install jekyll-import --pre
+</code></pre>
+
+<p>And followed their <a href="http://jekyllrb.com/docs/migrations">importing guide</a>, my old posts are more or less broken. But I think cleaning them up will be a more long term solution, and I don’t need a PHP server anymore :)</p>
+
+<p>I plan to port <a href="https://github.com/aramkocharyan/crayon-syntax-highlighter">Crayon</a> eventually, but that’s another story.</p>
+
+            </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2013/01/15/minimizing-code-in-crayon%20copy.html"><h3>Minimizing Code in Crayon</h3></a>
+            <span class="date">15 Jan 2013</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            In the latest version of Crayon, you can choose to hide the code until the user expands it. This doesn't apply to inline code. You can enable/disable it for individual Crayons using the Tag Editor.
+
+
+
+If a title is set in the Tag Editor it is used in place of "Click To Expand Code".
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2013/01/12/crayon-themes.html"><h3>Crayon Themes</h3></a>
+            <span class="date">12 Jan 2013</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Create themes and edit existing ones with the integrated Theme Editor and submit them for inclusion as a Stock Theme. Here's sample of the currently available set. Striped lines can be toggled in settings and for individual Crayons.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2013/01/04/generic-javascript-slider.html"><h3>Generic JavaScript Slider</h3></a>
+            <span class="date">04 Jan 2013</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2013/01/03/creating-a-simple-wordpress-widget.html"><h3>Creating a Simple Wordpress Widget</h3></a>
+            <span class="date">03 Jan 2013</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Here's a Wordpress widget base class which reduces the amount of code needed to create a simple widget with fields. Allows overriding a method adding more complex fields. This code should be placed in your theme's function.php file. You can then subclass Field_Widget whenever you like by following the example given.
+
+Thanks to http://frobert.com/en/2010/12/10/wordpress-widget-tutorial/ for sharing tips on how to use WP_Widget.
+
+&nbsp;
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/12/30/php-sending-an-email-attachment.html"><h3>PHP: Sending an Email Attachment</h3></a>
+            <span class="date">30 Dec 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Here's my adapted version of sending an email attachment and allowing HTML and plain encodings. emailFile(array( 'to' =&gt; 'your@email.com', 'from' =&gt; 'my@email.com', 'subject' =&gt; 'Some Subject', 'message' =&gt; '&lt;b&gt;Hello!&lt;/b&gt;', 'plain ' =&gt; 'Get a new email client!', 'file' =&gt; '/path/to/file' )); /** * Sends an email in html and plain encodings with a file attachment. * * @param array $args Arguments associative array * 'to' (string) * 'from' (string) * 'subject' (optional string) * 'message' (HTML string) * 'plain' (optional...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/12/30/php-get-files-in-a-directory-recursively.html"><h3>PHP: Get Files in a Directory Recursively</h3></a>
+            <span class="date">30 Dec 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            This is a method that will return an array of file paths from a directory. It's contained within CrayonUtil and calls other utility methods in that class, but can be ripped out if needed. /** * @param $path A directory * @param array $args Argument array: * hidden: If true, hidden files beginning with a dot will be included * ignoreRef: If true, . and .. are ignored * recursive: If true, this function is recursive * ignore: An array of...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/12/28/javascript-generating-a-readable-foreground-colour-on-any-background-colour.html"><h3>JavaScript: Generating a Readable Foreground Colour on any Background Colour</h3></a>
+            <span class="date">28 Dec 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            This issue had been rolling around in my mind in the past but I never had to implement something like it before. I had a text box where I set the background colour based on a colour picker but that meant that the text value would remain black - which wouldn't be visible if the selected colour was also black, or even dark. My solution was to pick a colour that differed as much as possible from black - white...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/12/27/php-array_flip-with-values-containing-arrays.html"><h3>PHP: array_flip() with Values Containing Arrays</h3></a>
+            <span class="date">27 Dec 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            I had the following: $attributeTypes = array( 'color' =&gt; array('background', 'border-color'), 'size' =&gt; array('border-width') ); $attributeTypesInverse = array_flip($attributeTypes); But I got this warning: Warning: array_flip() [function.array-flip]: Can only flip STRING and INTEGER values! So I wrote a new function to support arrays as values, not just integers or strings. Keep in mind though that the values of the arrays in values must be integers or strings in order to be valid keys for the resulting array. function array_flip_r($array) { $result =...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/12/27/crayon-theme-editor.html"><h3>Crayon Theme Editor</h3></a>
+            <span class="date">27 Dec 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            The Theme Editor allows you to duplicate and modify custom themes compatible with Crayon using an integrated user interface and no CSS knowledge whatsoever. Of course, make changes to your theme by editing the CSS is also possible before and after using the theme editor. You can access the theme editor in Wordpress admin under Settings &gt; Crayon: The Theme section displays the information about the current theme, a toolbar for performing theme editor actions and the Live Preview. Modifying any...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/12/14/crayon-with-retina-support.html"><h3>Crayon with Retina Support</h3></a>
+            <span class="date">14 Dec 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Crayon 1.17 beta adds retina support for the buttons in the toolbar on high resolution devices.
+
+[caption id="attachment_1081" align="aligncenter" width="556"] Before[/caption]
+
+[caption id="attachment_1082" align="aligncenter" width="556"] After[/caption]
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/12/10/resources-loaded-in-crayon.html"><h3>Resources Loaded in Crayon</h3></a>
+            <span class="date">10 Dec 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            I've made Crayon with modularity in mind to allow reuse of any components if needed. Here are the Javascript components: js/util.js js/crayon.js js/jquery.popup.js js/fancybox/jquery.fancybox.init.pack.js js/fancybox/fancybox_init.js util/tag-editor/crayon_te.js `util.js` has several JavaScript methods that are shared across the admin settings, tag editor, theme editor (coming soon) and of course the front end which displays the Crayons. `crayon.js` is the main script which defines the toolbar button events and other settings, like toggling etc. `jquery.popup.js` is adapted jquery plugin I use to open...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/12/04/expanding-code-beyond-page-boundaries-in-crayon.html"><h3>Expanding code beyond page boundaries in Crayon</h3></a>
+            <span class="date">04 Dec 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            In 1.16 I've added the ability to expand the code beyond the page border by setting it as large as it needs to be to accomodate the code within. Enable the setting "Expand code beyond page borders on mouseover" under Settings &gt; Crayon &gt; Code, which is disabled by default.
+
+
+
+
+
+I've also added a new toggle which expands and contracts.
+
+
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/11/28/initialising-fancybox-with-custom-objects.html"><h3>Using different versions of Fancybox on the same page</h3></a>
+            <span class="date">28 Nov 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            I ran into the issue where some users had an older version of Fancybox on their sites and needed to provide my own version to work with Crayon. So I put together a modification of the original script which allows you to initialise Fancybox when you need it and with different objects to what it's usually provided. By default, Fancybox will apply these once the script is loaded: (window, document, jQuery) And it will initialise jQuery.fancybox. If I want to...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/10/02/javascript-hexidecimal-colours.html"><h3>JavaScript Hexidecimal Colours</h3></a>
+            <span class="date">02 Oct 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            
+&nbsp;
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/09/26/internal-post-management-crayon.html"><h3>Internal Post Management in Crayon</h3></a>
+            <span class="date">26 Sep 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Crayon's internal post management determines when the rest of the system should kick in. When you save/edit a page, Crayon searches through the content and keeps a reference to the post in the database if it contains any Crayon tags. When you save/edit a comment, the same process takes place. When you load a page, Crayon goes through all the posts requested (for a single page, this is usually just a single post) and only checks those known to contain...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/09/26/converting-legacy-tags-to-pre.html"><h3>Converting Legacy Tags to Pre Tags</h3></a>
+            <span class="date">26 Sep 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            If you've been using Crayon Mini Tags or other syntax highlighters with syntax like: [php title="testing"]some code[/php] Or any other legacy Crayon tags: $[crayon lang="php" title="testing"]some code[/crayon] Then you might like to convert your blog's old code format into a better standard: &lt;pre class="lang:php decode:true" title="Testing"&gt;some code&lt;/pre&gt; The benefits are backwards compatibility (if Crayon is disabled or you use another highlighter) and the ability to use the Crayon Tag Editor in the visual editor of Wordpress). Note: decode:true means that the code...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/09/08/crayon-with-bbpress.html"><h3>Crayon with bbPress</h3></a>
+            <span class="date">08 Sep 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            I've added bbPress support into Crayon since 1.11. Make sure you enable the setting "Display the Tag Editor in any TinyMCE instances on the frontend", which is off by default from v1.15 to reduce the number of needed resources. This is needed to display the Tag Editor for any other frontend TinyMCE editors you may have (including but not limited to those in bbPress). I'd appreciate any bug testing (and fixing?!) from people who use bbPress, since I've made a lot...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/09/02/line-ranges-in-crayon.html"><h3>Line Ranges in Crayon</h3></a>
+            <span class="date">02 Sep 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Due to a recent request I've added a feature in Crayon that allows you to specify a line range (e.g. 3-5) of code to include in the Crayon. Only the lines in this range are actually used in the output.
+
+Here's the original:
+
+
+
+And with a range:
+
+
+
+
+
+You can also provide the range as a single number and only show one line in the output. This will be released with Crayon 1.10.2, but it's available now at GitHub.
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/08/25/current-url-in-javascript.html"><h3>Current URL in JavaScript</h3></a>
+            <span class="date">25 Aug 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+             
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/07/28/javascript-module-pattern.html"><h3>JavaScript Module Pattern</h3></a>
+            <span class="date">28 Jul 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            My take on the JavaScript module pattern. I needed to call init() when ready.
+
+(function($) {
+
+	window.moduleName = new function() {
+		var base = this;
+
+		// Internally visible
+		var pvt = '123';
+
+		// Externally visible
+		base.init = function() {
+			console.log('init');
+		};
+	};
+
+})(jQuery);
+
+console.log(moduleName.init);
+&nbsp;
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/07/21/jquery-blink-effect.html"><h3>jQuery Blink Effect</h3></a>
+            <span class="date">21 Jul 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            This will cause any element to blink, with the option to provide a duration for its disappearance.
+$.fn.blink = function(time) {
+	var time = typeof time == 'undefined' ? 200 : time;
+	$(this).hide(0).delay(time).show(0);
+}
+
+// Example
+$('.something').blink();
+&nbsp;
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/07/21/css-background-size-jquery-plugin.html"><h3>CSS Background Size jQuery Plugin</h3></a>
+            <span class="date">21 Jul 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            View on Github
+
+Replicates the functionality of CSS3 background-size for "contain" and "cover" keywords not supported by browsers below IE9.
+How to
+Add an image inside a div. Set the height and width of the div and set 'cover' or 'contain' to replicate the CSS3 background-size property in browsers that don't support it.
+&lt;div style="width: 400px; height: 300px;"&gt;
+    &lt;img class="background-size-cover" src="apple.jpg" /&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+$(document).ready(function() {
+    $('.background-size-cover').bgdSize('cover');
+});
+&lt;/script&gt;
+Methods
+These are valid:
+$('.background-size-cover').bgdSize('cover');
+$('.background-size-cover').bgdSize('contain');
+$('.background-size-cover').bgdSize({mode : 'contain'});
+&nbsp;
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/06/29/adding-placeholder-support-to-all-browsers.html"><h3>Adding Placeholder Support To All Browsers</h3></a>
+            <span class="date">29 Jun 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            This adds placeholder for browsers that don't support it (IE).
+
+&nbsp;
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/06/14/haskell.html"><h3>Haskell</h3></a>
+            <span class="date">14 Jun 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Just a note that Crayon 1.9.8 adds support for Haskell, and also TeX. module Interpret(interpret) where import Prog import System.IO.Unsafe import Control.Monad import Char -- In a call to this function such as "interpret prog vars entry debug": -- prog is the ABCD program to be interpreted; -- vars represents the initial values of the four variables; -- entry is the name of the entry point function, "main" by default; and -- debug specifies whether the user wants debugging output....
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/05/30/adding-crayon-to-posts-in-wordpress-programmatically.html"><h3>Adding Crayon To Posts In Wordpress Programmatically</h3></a>
+            <span class="date">30 May 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            I've just added a PHP function called `CrayonWP::highlight()` that you provide with string containing Crayons like they appear in the post editor that produces Crayons as you see them on screen. This will let you arbitrarily create Crayons anywhere in your code given some code and then add them to the post content or wherever you like. Just add this to your theme's `functions.php` or  somewhere within your theme. add_filter('the_content', 'add_crayons_to_content'); function add_crayons_to_content($content) { global $post; $id = $post-&gt;ID; // Generate some...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/05/03/using-crayon-manually-in-php.html"><h3>Using Crayon Manually in PHP</h3></a>
+            <span class="date">03 May 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Crayon can be used in any PHP environment so it's possible to extend to another CMS other than Wordpress. Here's a sample of how you'd do that. This script works from the Crayon plugin directory, so you'd need to update any paths. Also make sure you reference correct urls and paths for the defined settings. &lt;?php require_once ('global.php'); require_once (CRAYON_HIGHLIGHTER_PHP); // These will depend on your framework CrayonGlobalSettings::site_http('http://localhost/crayon/'); CrayonGlobalSettings::site_path(dirname(__FILE__)); // For WP, this is ABSPATH CrayonGlobalSettings::plugin_path('http://localhost/crayon/wp-content/plugins/crayon-syntax-highlighter/'); // Should be in...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/03/25/crayon-tag-editor.html"><h3>Crayon Tag Editor</h3></a>
+            <span class="date">25 Mar 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            I'm happy to announce that in 1.9.0, Crayon will feature a built in Tag Editor in both the Visual and HTML editors of Wordpress! Normally, you'd have to type the shortcode in HTML editor and make sure you use the right language ID and so forth. Overriding default settings, like changing the theme, font and toolbar settings was more work than necessary. Now these settings are all built into the new user interface. How It Works Use on the Visual...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/03/20/word-limiting-with-regular-expressions.html"><h3>Word Limiting With Regular Expressions</h3></a>
+            <span class="date">20 Mar 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Here's my take on limiting words in a paragraph.
+
+^s*((?:S+s*){0,20})(.*)
+
+That'll capture the first 20 words and also the rest of the string. Then, you can replace the entire capture with the first capture group (the first 20 words). In PHP:
+
+
+function ak_limit_words($str, $word_limit) {
+	return preg_replace('#^s*((?:S+s*){0,'.$word_limit.'})(.*)#msi', '$1', $str);
+}
+
+// Output: 'this is the '
+ak_limit_words('this is the sentence...', 3);
+
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/03/20/filter-dropdown-for-wordpress.html"><h3>Filter Posts With A Dropdown In Wordpress</h3></a>
+            <span class="date">20 Mar 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            I made an unusually long answer on StackOverflow, thought I'd share here also. I don't now about you but Crayon looks prettier to me :) Almost 1000 views and not a single comment. Well, I also needed this and decided to make it. I've shared the JavaScript and Wordpress code below for people in the distant future to use. It looks like a lot, but that's because I've defined some jQuery functions you can use later with .extend. All it's...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/03/19/removing-unfinished-sentences-from-paragraphs.html"><h3>Removing Unfinished Sentences From Paragraphs</h3></a>
+            <span class="date">19 Mar 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            These are helpful after you strip a paragraph for a word limit and want to cut off the last incomplete sentence. // Remove the last unfinished sentence in a paragraph if it contains $min_word_count or less words function remove_unfinished_sentence($paragraph, $min_word_count = 3, $replace = '.') { $min_word_count = $min_word_count > 1 ? $min_word_count : 1; return preg_replace('#(.s*([^s.]+s+){0,'.($min_word_count-1).'}([^s.]+s*))$#ms', $replace, $paragraph); } Of course, if you want to completely remove the last sentence, this will suffice: // Remove the last sentence in...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/03/17/variadicvariablekeyword-arguments-in-php.html"><h3>Variadic/Variable/Keyword Arguments In PHP</h3></a>
+            <span class="date">17 Mar 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            I miss being able to just pass in named variables in Python. Well, while PHP isn't as elegant at that, I've decided to use this: function vargs(&$var, $default) { $var = isset($var) ? $var: $default; } function some_func($args) { extract($args); vargs($first, ''); var_dump($first); } some_func(array('first' => '1st', 'second' => '2nd')); The first string will turn into $first which will then be set to 1st. If first is missing, then vargs() will set it to the default you've provided. The main...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/03/10/testing-wordpress-in-windows-from-a-mac.html"><h3>Testing Wordpress In Windows From A Mac</h3></a>
+            <span class="date">10 Mar 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            I work on a Mac but I need to be able to test my sites on a Windows computer, namely because I need to make sure the 40% or so people who are using IE won't have the site break on their crappy browser. Since I work on localhost (my local machine), I could upload my site to a remote server and test it on another computer running Windows. This is slow, and I want to test it on the...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/03/07/inline-crayons.html"><h3>Inline Tags, `Backquotes` and Crayons In Comments</h3></a>
+            <span class="date">07 Mar 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            UPDATE: Use the Tag Editor for creating inline tags. The approach below is now depreciated. As of Crayon 1.8.3, you can have inline Crayons floating in the middle of sentences for quick snippets. You can use them like you'd use code tags. Here's the code in the editor: Here's an example of a floating {php} echo 'Crayon'; {/php} right in the middle of a sentence. Neat! They work like Mini Tags which use square brackets but instead Inline Tags use...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/01/30/ios-app-store-icon-template.html"><h3>iOS App Store Icon Template</h3></a>
+            <span class="date">30 Jan 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Here's a 512px x 512px App Icon Template for general use. I built it on this template. I removed all the clutter surrounding it and kept it as a single file. Ideally you don't want to have more than one image to edit. Download Template PSD To export for different devices, follow these specs outlined by Apple in their Human Interface Guidelines: Just go Save For Web & Devices in Photoshop and resize the image before exporting. Simple! DeviceImage Height/Width...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/01/28/crayon-meets-ruby.html"><h3>Crayon Meets Ruby</h3></a>
+            <span class="date">28 Jan 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            In 1.7.24 I've added Ruby and Ruby on Rails as a language on Crayon. Even cooler, I've added the &lt;% ... %&gt; and similar delimiter tags for eRuby/RHTML. Using Multiple Language Highlighting in Crayon, you can choose HTML as the base language with the lang="html" attribute or the $[html]...[/html] Mini Tag and then through in some eRuby syntax. The red bits are Ruby, all else is XHTML. Note you can do the same thing with PHP tags, CSS tags and...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/01/23/generic-stack-for-objective-c.html"><h3>Generic Stack for Objective-C</h3></a>
+            <span class="date">23 Jan 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Here's a simple stack to store any ol' object in Objective-C. // // Generic Stack v1.0 // By Aram Kocharyan. http://localsite.com/ak/ // #import static const int kFMStackDefaultCapacity = 10; @interface FMStack : NSObject { NSMutableArray *stack; } + (id)stack; + (id)stackWithCapacity:(int)capacity; - (id)initWithCapacity:(int)capacity; - (void)push:(id)object; - (id)pop; - (void)clear; - (int)count; @end // // Generic Stack v1.0 // By Aram Kocharyan. http://localsite.com/ak/ // #import "FMStack.h" @implementation FMStack + (id)stack { return [[[self alloc] init] autorelease]; } + (id)stackWithCapacity:(int)capacity { return...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/01/23/failing-to-load-crayons-on-pages.html"><h3>Failing To Load Crayons On Pages</h3></a>
+            <span class="date">23 Jan 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Some themes use a page template containing a custom loop. The issue is: Since your theme uses a page to load a totally different query from the page it visits there’s no way for Crayon to know what you’re going to request until it reads your has_posts() request. By that time, the header is already written so there’s no chance to enqueue themes and fonts that you’ve used in your Crayons. Fortunately I’ve added a feature so that they are...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/01/17/adding-css-rules-with-important-using-jquery.html"><h3>Adding CSS Rules With !important Using jQuery</h3></a>
+            <span class="date">17 Jan 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            If you have a CSS with an !important rule and you want to specify an inline rule to override this, you can set the style attribute like this: .attr('style', 'width:200px !important;') but I've found a better way and added a new jQuery function for it. jQuery.style(name, value, priority); You can use it to get values with .style('name') just like .css('name'), get the CSSStyleDeclaration with .style(), and also set values - with the ability to specify the priority as 'important'. See...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/01/16/preg_match_all-for-javascript.html"><h3>preg_match_all for JavaScript</h3></a>
+            <span class="date">16 Jan 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            
+
+// Add to RegExp prototype
+RegExp.prototype.execAll = function(string) {
+	var matches = [];
+	var match = null;
+	while ( (match = this.exec(string)) != null ) {
+		var matchArray = [];
+		for (var i in match) {
+			if (parseInt(i) == i) {
+				matchArray.push(match[i]);
+			}
+		}
+		matches.push(matchArray);
+	}
+	return matches;
+}
+
+// Example
+var someTxt = 'abc123 def456 ghi890';
+var results = /[a-z]+(d+)/g.execAll(someTxt);
+console.log(results);
+
+// Output
+[["abc123", "123"],
+ ["def456", "456"],
+ ["ghi890", "890"]]
+
+
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/01/16/css-to-json-converter-for-javascript.html"><h3>CSS to JSON Converter for JavaScript</h3></a>
+            <span class="date">16 Jan 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            I've put together a script that converts CSS to JSON and back to CSS. I'll be using it to build a Theme Editor in Crayon.
+
+
+// To JSON, ignoring order of comments etc
+var json = CSSJSON.toJSON(cssString);
+
+// To JSON, keeping order of comments etc
+var json = CSSJSON.toJSON(cssString, true);
+	
+// To CSS
+var css = CSSJSON.toCSS(jsonObject);
+
+
+The sample.html file that demonstrates the script, along with the script itself, can be found on GitHub:
+
+https://github.com/aramkocharyan/CSSJSON
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/01/13/disable-nslog-when-using-device.html"><h3>Disable NSLog When Not Using Simulator in Xcode</h3></a>
+            <span class="date">13 Jan 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            If you're testing a game on a device, it's good to disable NSLogs, since you're not going to read them unless you've got it plugged into Xcode and viewing the debugger. I usually test on the device once I'm satisfied it works in the Simulator.
+
+
+#if !defined(DEBUG) || !(TARGET_IPHONE_SIMULATOR)
+    #define NSLog(...)
+#endif
+
+
+If you still want to have the NSLogs on the device:
+
+
+#ifndef(DEBUG)
+    #define NSLog(...)
+#endif
+
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/01/07/enqueuing-themes-and-fonts-in-crayon.html"><h3>Enqueuing Themes and Fonts in Crayon</h3></a>
+            <span class="date">07 Jan 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            I've recently been notified of an issue here once again to do with enqueuing CSS. So I decided to take another look and I believe I've improved the Crayon capturing and enqueuing process by cleaning it up a bit. Now you'll see two new options in settings under Themes and Fonts. To efficiently enqueue the CSS for themes and fonts in the html header tag the proper way (default) leave these checkboxes ticked. If you're having issues for some reason...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2012/01/04/a-simple-ccsprite-button-in-cocos2d.html"><h3>A Simple CCSprite Button In cocos2d</h3></a>
+            <span class="date">04 Jan 2012</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            CCSprite's can implement the &lt;CCTargetedTouchDelegate&gt; protocol and implement the ccTouchBegan:, ccTouchEnded:, ccTouchMoved: and ccTouchCancelled: methods. I've built a class called GTButton that does this and allows you to specify two sprites to toggle between when the touch occurs. By default you must release your finger in the CCSprite to run a selector (a method on a target object), but you can change this with mustReleasemustReleaseInside boolean properties of the GTButton object. Here's the header file and the download link to...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/12/29/gap-between-sprites-when-moving-in-cocos2d.html"><h3>Gap Between Sprites When Moving In cocos2d</h3></a>
+            <span class="date">29 Dec 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Today I decided to fix the irritating bug that occurs when moving sprites. Due to the OpenGL rendering, when we use the update() delta to move sprites they can move by sub pixels and this causes a small gap to appear between the two sprites that are used to form a continuous moving background. I used this logic in my parallax effects. There are numerous proposed solutions, but it is apparently due to the OpenGL's requirement that the sprites dimensions...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/12/27/mini-tags-in-crayon.html"><h3>Mini Tags And Plain Tags In Crayon</h3></a>
+            <span class="date">27 Dec 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Warning: Mini Tags are depreciated in favour of &lt;pre&gt; tags. &lt;pre&gt; tags are backward compatible, html5 valid and usable in the new Tag Editor. If you have old blog posts that use Mini Tags, you can convert them automatically from the settings screen. Writing $[php theme="twilight"]echo 123;[/php] turns into $[crayon theme="twilight" lang="php"]echo 123;[/crayon]. No more do you need to retype the plugin's charming name anymore - just the language and the settings you care about. If you want, you can turn this...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/12/25/mixed-language-highlighting-in-crayon.html"><h3>Mixed Language Highlighting in Crayon</h3></a>
+            <span class="date">25 Dec 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            As was promised, in Crayon 1.7.0 I have added the ability to highlight multiple languages at once in a single Crayon. This is useful when you're showing an HTML page with PHP with the &lt;?php...?> delimiters, JavaScript with the &lt;script> tag and CSS with the &lt;style> tag. The delimiter regex is defined in /langs/delimiters.txt and there are two new settings added under "Code". You'll see a "+" sign by default when multiple languages are detected in your Crayon, and you...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/12/12/loading-css-and-javascript-only-when-required-in-a-wordpress-plugin.html"><h3>Loading CSS and JavaScript only when required in a WordPress Plugin</h3></a>
+            <span class="date">12 Dec 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Update: As pointed out here, you'll also want to disable the option "Display the Tag Editor in any TinyMCE instances on the frontend". Recently I was made aware of yet further problems with attempting to optimise Crayon so it only loaded its resources when it was required - when the $[crayon] shortcode was being used in a post on the page. This was taken care of by using the the_posts filter in Wordpress detailed here. However, this method poses a problem if...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/12/01/creating-a-repeating-backgroundinfinite-parallax-effect-in-cocos2d.html"><h3>Creating a repeating background/infinite parallax effect in cocos2d</h3></a>
+            <span class="date">01 Dec 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            I'm working on an iPhone game and thought I'd share some code for a infinite parallax class I made. I'm aware of CCParallaxNode, I've named mine CCParallaxScrollNode and it greatly simplifies the task of creating a repeating background with parallax effects. It does all the dirty work for you, essentially. Here's the info and link, and a sample project. Remember to change the Base SDK in the project settings to the latest you have. CCParallaxScrollNode on GitHub Download Sample Project...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/11/08/shortening-urls-into-unique-strings.html"><h3>Shortening URLs Into "Unique" Strings</h3></a>
+            <span class="date">08 Nov 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            I needed to make a URL into a maximum of 40 characters of uniqueness, so I had a stab at it. This removes every nth character in the string (spaced out across the string's length) until it reaches the required size. If the url isn't above the max length (after removing URL syntax), then it is kept as is. This is somewhat naive, but it works pretty well. It's useful for storing URLs under keys. Another, perhaps better approach is...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/11/08/create-unique-id-from-string.html"><h3>Create Unique ID From String</h3></a>
+            <span class="date">08 Nov 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            This method basically goes through a string, gets the ASCII value of the character, multiplies it with the fraction of the character index divided by the overall length, and adds it to a total. It then appends the HEX value of the length of the string to the HEX value of this total.
+
+
+// Example
+str_uid('http://www.google.com.au/'); //191a78c
+str_uid('http://www.google.com/'); //16177fa
+str_uid('hey there!'); //a9998
+str_uid(''); //00
+
+function str_uid($str) {
+	$uid = 0;
+	for ($i = 1; $i 
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/10/29/crayon-settings.html"><h3>Crayon Global Settings</h3></a>
+            <span class="date">29 Oct 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            The global settings found in Crayon > Settings can be overridden using attributes for an individual Crayon just like the regular attributes ("lang", "title", "url" etc). Here's an example:
+
+$[crayon lang="html" font-size="20" mark="1" width="200px" toolbar="false"]This is great![/crayon]$
+
+See http://localsite.com/ak/projects/crayon-syntax-highlighter/ for a full list
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/10/25/jquery-popup-window.html"><h3>jQuery Popup Window</h3></a>
+            <span class="date">25 Oct 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Download From GitHub
+
+jQueryPopup v1.0 By Aram Kocharyan
+
+Based on popupWindow: http://swip.codylindley.com/popupWindowDemo.html
+
+Added Features:
+* Provide data instead of a url, data is put into the popup window
+* Bind and unbind any valid event ('click', 'dblclick')
+* Unbind events
+* Change settings after setting them
+
+
+
+Example:
+
+
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/10/23/the-horrors-of-using-preg_replace.html"><h3>The Horrors of Using preg_replace</h3></a>
+            <span class="date">23 Oct 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            If you're going to use replacement text that has '$' or '' in it, chances are it is going to be treated as a backreference. Any parentheses you include in your regex will be captured and placed into the replacement text. If you don't want this, you need to escape the '$' as '$' and the '' as '\'. One example is if you wanted to replace 'COST' with '$12345'. The preg_replace_escape_back() function will sort this out:
+
+
+
+
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/10/23/detect-mac-or-pc-in-php.html"><h3>Detect Mac or PC in PHP</h3></a>
+            <span class="date">23 Oct 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Use this script to find if the user is on a Mac or a PC. Returns TRUE when on a Mac. $default is optional. If the script can't determine either a Mac or a PC, it will return this.
+
+
+
+
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/10/19/expand-recursive-list-in-python.html"><h3>Expand recursive list in Python</h3></a>
+            <span class="date">19 Oct 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            This will expand a list of lists into a single list of all the items in Python.
+
+[[1, 2, 3, 4, [4, 5, 3, 2]], 2, 3, 4, [5, 2, 4, 5]] becomes:
+[1, 2, 3, 4, 4, 5, 3, 2, 2, 3, 4, 5, 2, 4, 5]
+
+
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/10/18/python-ordered-dictionary.html"><h3>Python Ordered Dictionary</h3></a>
+            <span class="date">18 Oct 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Well, I needed OrderedDict from Python 2.7+ but we had to use 2.5 for a software project, so I decided to do it the hard way and write it myself. It's my first actual Python class, so it's pretty cool that it works.
+
+
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/09/23/crayon-language-file-specification.html"><h3>Crayon Language File Specification</h3></a>
+            <span class="date">23 Sep 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Here's the language readme on how to create and edit language files which are used in Crayon to specify elements in languages using regular expressions and CSS rules for highlighting them.
+
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/09/18/drawing-touch-points-with-cocos2d.html"><h3>Drawing touch points with cocos2d</h3></a>
+            <span class="date">18 Sep 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            I've been experimenting with cocos2d for iOS development and made a very simple program that grabs the touch locations on the screen and draws the points. It uses a C++ vector to store the CGPoint primitives and the draw: message takes care of drawing them, whenever we fill the vector with points. Here's the draw: static std::vectorpoints; ... -(void) draw { ... // Draw points glPointSize(4); for (int i = 0; i And here's how the points are captured: -...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/09/14/trim-a-string-or-an-array-of-strings-recursively.html"><h3>Trim a String, or an Array of Strings Recursively</h3></a>
+            <span class="date">14 Sep 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            
+
+// Usage: trim_r( array(' 123 ', '   abc') );
+
+// Trim a string or an array of strings recursively
+function trim_r($array) {
+    if (is_string($array)) {
+        return trim($array);
+    } else if (!is_array($array)) {
+        return '';
+    }
+    $keys = array_keys($array);
+    for ($i=0; $i
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/09/14/mechanix-game-in-gwt.html"><h3>Mechanix Game in GWT</h3></a>
+            <span class="date">14 Sep 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Last semester we did a project with Google Web Toolkit where we need to design an educational game to test out the Uni's new MUGLE online game engine. My team's was called "Mechanix":
+http://mugle-app.appspot.com/+games/p-robot/Mechanix/
+
+
+While the educational value of the game has little merit, I think a lot of the work was put into a decent physics engine which was fun to make.
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/09/14/imdb-scraper.html"><h3>IMDb Scraper / Grabber</h3></a>
+            <span class="date">14 Sep 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            I was working on an Econometrics project and we needed to get a lot of data for a long list of tv shows. One good source was iMDB, but we didn't feel like typing in the details of 1800 records... That's when I had the idea of making a PHP scraper to get the info for us. I've polished it up and it's easier to use now. Download IMDbScraper from GitHub The simplest example is: // Perform a search and...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/09/11/singular-plural-words.html"><h3>Singular and Plural Numbered Words</h3></a>
+            <span class="date">11 Sep 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Use this to get something like: "5 bananas", "1 turtle".
+
+E.g. spnum(5, 'banana');
+
+
+// Support for singular and plural string variations
+function spnum($int, $singular, $plural = NULL) {
+	if (!is_int($int) || !is_string($singular)) {
+		$int = intval($int);
+		$singular = strval($singular);
+	}
+	if ($plural == NULL || !is_string($plural)) {
+		$plural = $singular . 's';
+	}
+	return $int . ' ' . (($int == 1) ? $singular : $plural);
+}
+
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/09/09/business-software-alliance-piracy-rate-data.html"><h3>Business Software Alliance Piracy Rate Data</h3></a>
+            <span class="date">09 Sep 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            While doing a project, I couldn't find a spreadsheet with data from the Business Software Alliance annual piracy rate reports, so I've compiled it into Google Docs:
+
+http://bit.ly/piracy-rates
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/09/01/strpos-with-an-array-of-needles.html"><h3>strpos with an array of needles</h3></a>
+            <span class="date">01 Sep 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Here's a quick function to search a string for the position of several string occurrences. Once one is found, it returns the position.
+
+
+// strpos with an array of $needles
+function strposa($haystack, $needles) {
+	if (is_array($needles)) {
+		foreach ($needles as $str) {
+			if (is_array($str)) {
+				$pos = strposa($haystack, $str);
+			} else {
+				$pos = strpos($haystack, $str);
+			}
+			if ($pos !== FALSE) {
+				return $pos;
+			}
+		}
+		return FALSE;
+	} else {
+		return strpos($haystack, $needles);
+	}
+}
+
+
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2011/09/01/check-string-array.html"><h3>Check if string is equal to items in array</h3></a>
+            <span class="date">01 Sep 2011</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            This function will test if any of the strings in an array is equal to a given string. You can specify case sensitivity. // tests if $needle is equal to any strings in $haystack function str_equal_array($needle, $haystack, $case_insensitive = TRUE) { if (!is_string($needle) || !is_array($haystack)) { return FALSE; } if ($case_insensitive) { $needle = strtolower($needle); } foreach ($haystack as $hay) { if (!is_string($hay)) { continue; } if ($case_insensitive) { $hay = strtolower($hay); } if ($needle == $hay) { return TRUE;...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2010/12/05/shadow-wing-java-game-using-slick-library.html"><h3>Shadow Wing Java Game using Slick Library</h3></a>
+            <span class="date">05 Dec 2010</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            Last semester we made a Java game using the Slick library for our project called Shadow Wing. I've packaged the game in a single zip, all you need is to have the Java Runtime Environment installed on your computer and then run the .exe inside the zip. If you're on a Mac or Linux machine, you can run the .jar as long as you set the max memory heap to something like 128MB, otherwise the game dies after it fills...
+            
+        </div>
+        
+    </article>
+    
+    <article >
+        <div class="meta">
+            <a class="title" href="/2010/12/05/how-to-make-a-multi-platform-executable-java-jar-file.html"><h3>How To Make A Multi-Platform Executable Java Jar File</h3></a>
+            <span class="date">05 Dec 2010</span></li>
+        </div>
+        
+        <div class="blurb">
+            
+            This will show you how to package all your java class files into a single executable jar file and how to make it runnable when you double click it. In our project we might need to load external resources like images from subfolders and other .jar libraries like slick.jar and lwjgl.jar. I used the eclipse IDE to develop my project. 1. Once you've got it working in eclipse, right click the root folder of your project in the Package Explorer...
+            
+        </div>
+        
+    </article>
+    
+</div>
+
+</div>
+
+<!-- Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <p>Aram Kocharyan, <span class="date">2015</span>.</p>
+
+        <p>Built with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> + <a
+                href="http://twitter.github.io/bootstrap/" target="_blank">Bootstrap</a>. Hosted at <a
+                href="http://pages.github.com/">GitHub Pages.</a></p>
+    </div>
+</footer>
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/lib/jquery.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="/lib/holder.js"></script>
+<script src="/lib/google-code-prettify/prettify.js"></script>
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38031779-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</body>
+</html>

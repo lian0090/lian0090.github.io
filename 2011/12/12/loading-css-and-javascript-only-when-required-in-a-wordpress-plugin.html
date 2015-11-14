@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>
+        
+        Loading CSS and JavaScript only when required in a WordPress Plugin | Aram Kocharyan
+        
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/lib/bootstrap/css/docs.css" rel="stylesheet">
+    <link href="/lib/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/syntax.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="/lib/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/assets/ico/favicon.png">
+
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+<!-- Navbar
+    ================================================== -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="/">Aram Kocharyan</a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="">
+                        <a href="/projects">Projects</a>
+                    </li>
+                    <li class="">
+                        <a href="/projects/crayon.html">Crayon</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container main-container">
+    <article class="single">
+    <div class="meta">
+        <h1 class="title">Loading CSS and JavaScript only when required in a WordPress Plugin</h1>
+
+        <span class="date">12 Dec 2011</span>
+    </div>
+
+    <div id="post">
+        <strong>Update: </strong>As pointed out <a href="http://wordpress.org/support/topic/crayon-code-is-generated-for-every-post?replies=1" target="_blank">here</a>, you'll also want to disable the option "Display the Tag Editor in any TinyMCE instances on the frontend".
+
+Recently I was made aware of yet further problems with attempting to optimise Crayon so it only loaded its resources when it was required - when the <code>$[crayon]</code> shortcode was being used in a post on the page. This was taken care of by using the <code>the_posts</code> filter in Wordpress detailed <a href="http://beerpla.net/2010/01/13/wordpress-plugin-development-how-to-include-css-and-javascript-conditionally-and-only-when-needed-by-the-posts/">here</a>. However, this method poses a problem if subsequent queries are made after the initial one, since only the initial query occurs before <code>wp_head</code>, where our scripts and styles are loaded.
+
+Basically, if the theme on a site is set up in such a way as to request posts without Crayon shortcodes initially (say, for the sidebar) before the main loop request containing all the posts in that page (which do contain the shortcode) then this method of detection will fail. As a result, I've decided to play it safe in version 1.6.3 and allow the option of <strong>always</strong> including the CSS and JavaScript files on each and every page. A setting is now available under Settings &gt; Crayon &gt; Misc. which allows you to toggle the efficient enqueuing. When enabled, Crayon will try to load these resources only when needed, but as mentioned before, this may or may not work depending on the structure of your theme. I think this will sort of all the problems some people are having. I've tested the plugin with the most popular themes and haven't found any problems with them, so it's an issue affecting the minority.
+
+If you're having issues with CSS and JS not loading - leave this efficiency setting off (default). If all is well for you, turn it on.
+
+<a href="http://localsite.com/ak/wp-content/uploads/2011/12/enqueue.png"><img class="aligncenter size-full wp-image-664" title="" src="http://localsite.com/ak/wp-content/uploads/2011/12/enqueue.png" alt="" width="547" height="119" /></a>
+
+    </div>
+</article>
+
+</div>
+
+<!-- Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <p>Aram Kocharyan, <span class="date">2015</span>.</p>
+
+        <p>Built with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> + <a
+                href="http://twitter.github.io/bootstrap/" target="_blank">Bootstrap</a>. Hosted at <a
+                href="http://pages.github.com/">GitHub Pages.</a></p>
+    </div>
+</footer>
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/lib/jquery.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="/lib/holder.js"></script>
+<script src="/lib/google-code-prettify/prettify.js"></script>
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38031779-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</body>
+</html>

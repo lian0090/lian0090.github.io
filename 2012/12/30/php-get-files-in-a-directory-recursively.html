@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>
+        
+        PHP: Get Files in a Directory Recursively | Aram Kocharyan
+        
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/lib/bootstrap/css/docs.css" rel="stylesheet">
+    <link href="/lib/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/syntax.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="/lib/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/assets/ico/favicon.png">
+
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+<!-- Navbar
+    ================================================== -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="/">Aram Kocharyan</a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="">
+                        <a href="/projects">Projects</a>
+                    </li>
+                    <li class="">
+                        <a href="/projects/crayon.html">Crayon</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container main-container">
+    <article class="single">
+    <div class="meta">
+        <h1 class="title">PHP: Get Files in a Directory Recursively</h1>
+
+        <span class="date">30 Dec 2012</span>
+    </div>
+
+    <div id="post">
+        This is a method that will return an array of file paths from a directory. It's contained within <a href="https://github.com/aramkocharyan/crayon-syntax-highlighter/blob/master/util/crayon_util.class.php" target="_blank">CrayonUtil</a> and calls other utility methods in that class, but can be ripped out if needed.
+<pre class="lang:php decode:true">/**
+ * @param $path A directory
+ * @param array $args Argument array:
+ *      hidden: If true, hidden files beginning with a dot will be included
+ *      ignoreRef: If true, . and .. are ignored
+ *      recursive: If true, this function is recursive
+ *      ignore: An array of paths to ignore
+ * @return array Files in the directory
+ */
+public static function getFiles($path, $args = array()) {
+    $hidden = self::set_default($args['hidden'], TRUE);
+    $ignoreRef = self::set_default($args['ignoreRef'], TRUE);
+    $recursive = self::set_default($args['recursive'], FALSE);
+    $ignore = self::set_default($args['ignore'], NULL);
+
+    $ignore_map = array();
+    if ($ignore) {
+        foreach ($ignore as $i) {
+            if (is_dir($i)) {
+                $i = CrayonUtil::path_slash($i);
+            }
+            $ignore_map[$i] = TRUE;
+        }
+    }
+
+    $files = glob($path . '*', GLOB_MARK);
+    if ($hidden) {
+        $files = array_merge($files, glob($path . '.*', GLOB_MARK));
+    }
+    if ($ignoreRef || $ignore) {
+        $result = array();
+        for ($i = 0; $i &lt; count($files); $i++) {
+            $file = $files[$i];
+            if (!isset($ignore_map[$file]) &amp;&amp; (!$ignoreRef || (basename($file) != '.' &amp;&amp; basename($file) != '..'))) {
+                $result[] = $file;
+                if ($recursive &amp;&amp; is_dir($file)) {
+                    $result = array_merge($result, self::getFiles($file, $args));
+                }
+            }
+        }
+    } else {
+        $result = $files;
+    }
+    return $result;
+}</pre>
+&nbsp;
+
+    </div>
+</article>
+
+</div>
+
+<!-- Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <p>Aram Kocharyan, <span class="date">2015</span>.</p>
+
+        <p>Built with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> + <a
+                href="http://twitter.github.io/bootstrap/" target="_blank">Bootstrap</a>. Hosted at <a
+                href="http://pages.github.com/">GitHub Pages.</a></p>
+    </div>
+</footer>
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/lib/jquery.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="/lib/holder.js"></script>
+<script src="/lib/google-code-prettify/prettify.js"></script>
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38031779-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</body>
+</html>

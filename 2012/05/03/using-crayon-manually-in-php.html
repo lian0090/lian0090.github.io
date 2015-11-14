@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>
+        
+        Using Crayon Manually in PHP | Aram Kocharyan
+        
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/lib/bootstrap/css/docs.css" rel="stylesheet">
+    <link href="/lib/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/syntax.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="/lib/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/assets/ico/favicon.png">
+
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+<!-- Navbar
+    ================================================== -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="/">Aram Kocharyan</a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="">
+                        <a href="/projects">Projects</a>
+                    </li>
+                    <li class="">
+                        <a href="/projects/crayon.html">Crayon</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container main-container">
+    <article class="single">
+    <div class="meta">
+        <h1 class="title">Using Crayon Manually in PHP</h1>
+
+        <span class="date">03 May 2012</span>
+    </div>
+
+    <div id="post">
+        Crayon can be used in any PHP environment so it's possible to extend to another CMS other than Wordpress. Here's a sample of how you'd do that. This script works from the Crayon plugin directory, so you'd need to update any paths. Also make sure you reference correct urls and paths for the defined settings.
+<pre class="lang:php decode:true crayon-selected">&lt;?php 
+
+require_once ('global.php');
+require_once (CRAYON_HIGHLIGHTER_PHP);
+
+// These will depend on your framework
+CrayonGlobalSettings::site_http('http://localhost/crayon/');
+CrayonGlobalSettings::site_path(dirname(__FILE__)); // For WP, this is ABSPATH
+CrayonGlobalSettings::plugin_path('http://localhost/crayon/wp-content/plugins/crayon-syntax-highlighter/');
+
+// Should be in the header
+crayon_resources();
+
+$crayon = new CrayonHighlighter();
+$crayon-&gt;code('some code');
+$crayon-&gt;language('php');
+$crayon-&gt;title('the title');
+$crayon-&gt;marked('1-2');
+$crayon-&gt;is_inline(FALSE);
+
+// Settings
+$settings = array(
+	// Just regular settings
+	CrayonSettings::NUMS =&gt; FALSE,
+	CrayonSettings::TOOLBAR =&gt; TRUE,
+	// Enqueue supported only for WP
+	CrayonSettings::ENQUEUE_THEMES =&gt; FALSE,
+	CrayonSettings::ENQUEUE_FONTS =&gt; FALSE);
+$settings = CrayonSettings::smart_settings($settings);
+$crayon-&gt;settings($settings);
+
+// Print the Crayon
+$crayon_formatted = $crayon-&gt;output(TRUE, FALSE);
+echo $crayon_formatted;
+
+// Utility Functions
+
+function crayon_print_style($id, $url, $version) {
+	echo '',"\n";
+}
+
+function crayon_print_script($id, $url, $version) {
+	echo '',"\n";
+}
+
+function crayon_resources() {
+	global $CRAYON_VERSION;
+	$plugin_url = 'http://localhost/crayon/wp-content/plugins/crayon-syntax-highlighter/';
+	// jQuery only needed once! Don't have two jQuerys, so remove if you've already got one in your header :)
+	crayon_print_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js', $CRAYON_VERSION);
+	crayon_print_style('crayon-style', $plugin_url.CRAYON_STYLE, $CRAYON_VERSION);
+	crayon_print_script('crayon_util_js', $plugin_url.CRAYON_JS_UTIL, $CRAYON_VERSION);
+	crayon_print_script('crayon-js', $plugin_url.CRAYON_JS, $CRAYON_VERSION);
+	crayon_print_script('crayon-jquery-popup', $plugin_url.CRAYON_JQUERY_POPUP, $CRAYON_VERSION);
+}
+
+?&gt;</pre>
+
+    </div>
+</article>
+
+</div>
+
+<!-- Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <p>Aram Kocharyan, <span class="date">2015</span>.</p>
+
+        <p>Built with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> + <a
+                href="http://twitter.github.io/bootstrap/" target="_blank">Bootstrap</a>. Hosted at <a
+                href="http://pages.github.com/">GitHub Pages.</a></p>
+    </div>
+</footer>
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/lib/jquery.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="/lib/holder.js"></script>
+<script src="/lib/google-code-prettify/prettify.js"></script>
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38031779-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</body>
+</html>
