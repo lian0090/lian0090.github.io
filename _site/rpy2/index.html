@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+    * Author:         Lian Lian 
+    -->
+    <meta charset="utf-8" />
+    <title>rpy2 | lianlian.com</title>
+    <meta name="author" content="Lian Lian" />
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="Lian Lian's Blog" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="/css/default.css" type="text/css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+    <script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+
+
+   <div class="home-menu">
+        <div class="home-icon-con">
+            <a class="home-menu-icon" href="/">Lian Lian </a>           
+        </div>
+       
+<!--
+ 
+  <div>
+<script>
+  (function() {
+    var cx = '001502921916385974381:ylnbr82nqdm';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</div>
+-->
+         <!-- 
+        Beiyuu's original link to douban 
+        <div class="home-contact">
+            <a href="http://www.weibo.com/beiyuu" target="_blank" style="margin-left:-5px;"><img src="http://www.weibo.com/favicon.ico" alt="" width="25"/></a>
+            <a href="http://www.douban.com/people/beiyuu/" target="_blank" style="text-align:center;"><img src="http://www.douban.com/favicon.ico" alt="" width="22"/></a>
+            <a href="http://instagram.com/beiyuu/" target="_blank" style="text-align:right"><img src="http://d36xtkk24g8jdx.cloudfront.net/bluebar/00c6602/images/ico/favicon.ico" alt="" width="22"/></a>
+        </div>
+         -->
+
+    </div>
+
+    <link rel="stylesheet" href="/js/prettify/prettify.css" />
+<style type="text/css">
+    body { background:#e8e8e8; }
+    @media screen and (max-width: 750px){
+        body { background:#fff; }
+    }
+    @media screen and (max-width: 1020px){
+        body { background:#fff; }
+    }
+</style>
+
+<div id="content">
+    <div class="entry">
+        <h1 class="entry-title"><a href="/rpy2" title="rpy2">rpy2</a></h1>
+        <p class="entry-date">2015-08-21</p>
+        <h1>rpy2</h1>
+
+<h2>Install</h2>
+
+<p>I have to do the following to allow pytyhon to correctly load rpy2
+python setup.py build_ext --ignore-check-rversion install</p>
+
+<p>On msi, easy_install and pip will not work. They have problems loading -lpython2.7. However, the above manual install works.</p>
+
+<pre><code>R RHOME: this gives the RHOME
+/soft/R/3.1.0/lib64/R
+</code></pre>
+
+<p>you can find libR.so in soft/R/3.1.0/lib64/R/lib
+Then add this line to .bash_profile
+<code>
+LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:soft/R/3.1.0/lib64/R/lib
+</code></p>
+
+<pre><code>/home/bernardo/lianl0/python/rpy2-2.4.1-py2.6-linux-x86_64.egg/rpy2/rinterface/_rinterface.so: undefined symbol: PyCapsule_CheckExact
+</code></pre>
+
+<p>You need python 2.7, because python 2.6 does not have PyCapsule</p>
+
+<pre><code>which python
+Data types
+import rpy2.robjects as robjects
+robjects.r('cat("I am good\n", c(1:10),"\n\n")')
+robjects.StrVector(['abc', 'def'])
+robjects.IntVector([1, 2, 3])
+v = robjects.FloatVector([1.1, 2.2, 3.3, 4.4, 5.5, 6.6])
+m = robjects.r['matrix'](v, nrow = 2)
+rsum = robjects.r['sum']
+rsum(v)[0]
+from rpy2.robjects import FloatVector
+from rpy2.robjects.packages import importr
+import numpy as np
+lme4=importr("lme4")
+robjects.globalenv["weight"] = weight
+robjects.globalenv["group"] = group
+lm1=lme4.lmer("weight~1+(1|group)")
+lm1var=robjects.r.VarCorr(lm1)
+lm1var.rx['group']
+lm1var.rx2('group')
+sde=robjects.r.attributes(lm1var).rx2('sc')
+np.array(sde)**2
+</code></pre>
+
+    </div>
+
+    <div class="sidenav">
+        <iframe width="100%" height="75" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=75&fansRow=2&ptype=1&speed=0&skin=5&isTitle=0&noborder=0&isWeibo=0&isFans=0&uid=1855270953&verifier=375b89d6&dpc=1"></iframe>
+    </div>
+
+    <div class="sidenav">
+
+        <h2>TechMemo</h2>
+        <ul class="artical-list">
+        
+            <li><a href="/Output-random-effects-from-SKAT">Output random effects estimates from SKAT.</a></li>
+        
+            <li><a href="/mixing-in-FWh0">mixing in FWh0</a></li>
+        
+            <li><a href="/rpy2">rpy2</a></li>
+        
+            <li><a href="/python">Python memo</a></li>
+        
+            <li><a href="/jekyll">Jekyll</a></li>
+        
+            <li><a href="/html">bash</a></li>
+        
+            <li><a href="/bash">bash</a></li>
+        
+            <li><a href="/R">R</a></li>
+        
+        </ul>
+
+        <h2>Project</h2>
+        <ul class="artical-list">
+        
+        </ul>
+        
+        <h2>Collection</h2>
+        <ul class="artical-list">
+        
+            <li><a href="/overapi-cheatsheet">OverAPI</a></li>
+        
+            <li><a href="/raining-in-chrome">听雨</a></li>
+        
+            <li><a href="/github-pages">使用Github Pages建独立博客</a></li>
+        
+            <li><a href="/why-blog">我为什么写博客？</a></li>
+        
+        </ul>
+    </div>
+</div>
+
+<script src="/js/post.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+        $(function(){
+            $('.home-follow').click(function(e){
+                e.preventDefault();
+
+                if($('.home-contact').is(':visible')){
+                    $('.home-contact').slideUp(100);
+                }else{
+                    $('.home-contact').slideDown(100);
+                }
+            });
+        })
+    </script>
+
+</body>
+</html>

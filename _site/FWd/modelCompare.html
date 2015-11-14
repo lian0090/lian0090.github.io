@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+    * Author:         Lian Lian 
+    -->
+    <meta charset="utf-8" />
+    <title>compare methods setting E(h)=0 vs E(h)=mu | lianlian.com</title>
+    <meta name="author" content="Lian Lian" />
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="Lian Lian's Blog" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="/css/default.css" type="text/css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+    <script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+
+
+   <div class="home-menu">
+        <div class="home-icon-con">
+            <a class="home-menu-icon" href="/">Lian Lian </a>           
+        </div>
+       
+<!--
+ 
+  <div>
+<script>
+  (function() {
+    var cx = '001502921916385974381:ylnbr82nqdm';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</div>
+-->
+         <!-- 
+        Beiyuu's original link to douban 
+        <div class="home-contact">
+            <a href="http://www.weibo.com/beiyuu" target="_blank" style="margin-left:-5px;"><img src="http://www.weibo.com/favicon.ico" alt="" width="25"/></a>
+            <a href="http://www.douban.com/people/beiyuu/" target="_blank" style="text-align:center;"><img src="http://www.douban.com/favicon.ico" alt="" width="22"/></a>
+            <a href="http://instagram.com/beiyuu/" target="_blank" style="text-align:right"><img src="http://d36xtkk24g8jdx.cloudfront.net/bluebar/00c6602/images/ico/favicon.ico" alt="" width="22"/></a>
+        </div>
+         -->
+
+    </div>
+
+    <pre><code class="R">library(FWd)
+data(wheat)
+attach(wheat.Y)
+OLSh0=lmFWh0(y,VAR,ENV)
+OLShmu=lmFWhmu(y,VAR,ENV)
+head(OLSh0$b)
+head(OLShmu$b)
+</code></pre>
+
+<p>b for OLS are the same.
+```R</p>
+
+<blockquote><p>head(OLSh0$b)
+               [,1]
+103122  -0.01499334
+1047493 -0.23156180
+1058137  0.15262836
+1064007  0.33197972
+1066175  0.16119069
+1066279  0.14964002</p>
+
+<p>head(OLShmu$b)
+               [,1]
+103122  -0.01499334
+1047493 -0.23156180
+1058137  0.15262836
+1064007  0.33197972
+1066175  0.16119069
+1066279  0.14964002</p></blockquote>
+
+<pre><code>
+But we should notice that the estimates of g and the interpretation of g changed
+</code></pre>
+
+<blockquote><p>cor(OLSh0$g,OLShmu$g)
+         [,1]
+[1,] 0.399232
+```</p></blockquote>
+
+<p>The effect of changing the mean of h on Gibbs method
+<code>R
+GibbsIh0=GibbsFWh0(y=y,VAR=VAR,ENV=ENV,saveAt="GibbsIh0")
+GibbsIhmu=GibbsFWhmu(y=y,VAR=VAR,ENV=ENV,saveAt="GibbsIhmu")
+</code>
+results
+<code>R
+cor(GibbsIhmu$b,GibbsIh0$b)
+           Init1
+Init1 -0.3296878
+</code>
+The variance estimates for var_b is greatly reduced by introducing mu into h.
+```R</p>
+
+<blockquote><p>GibbsIhmu$var_b
+    Init1
+0.0144938
+GibbsIh0$var_b
+     Init1
+0.09865855
+<code>
+Why if we center y before using GibbsFWhmu?
+By centering y, we almost recovered the original solutions with GibbsFWh0.
+</code>R
+yc=y-mean(y)
+GibbsI.yc.hmu=GibbsFWhmu(y=yc,VAR=VAR,ENV=ENV)
+GibbsI.yc.hmu$var_b
+     Init1
+0.09357356
+cor(GibbsI.yc.hmu$b,GibbsIh0$b)
+          Init1
+Init1 0.9499459
+```</p></blockquote>
+
+<h2>test different models's prediction accuracy</h2>
+
+<pre><code class="R">yNA=y
+set.seed(12345)
+whichNa=seq(from=0,to=2392,by=4)+sample(1:4,size=599,replace=T)
+yNA[whichNa]=NA
+
+OLS=lmFWh0(y=yNA,VAR=VAR,ENV=ENV)
+GibbsIhmu=GibbsFWhmu(y=yNA,VAR=VAR,ENV=ENV,seed=12345)
+GibbsIhmuyc=GibbsFWhmu(y=scale(yNA,center=T,scale=F),VAR=VAR,ENV=ENV,seed=12345)
+GibbsIh0=GibbsFWh0(y=yNA,VAR=VAR,ENV=ENV, seed=12345)
+</code></pre>
+
+<p>The results on prediction accuracy. Even if we center y, the results on prediction accuracy is still suboptimal. Change seeds will get similar results.
+```R</p>
+
+<blockquote><p>cor(y[whichNa],OLS$yhat[whichNa,])
+[1] 0.6218797
+cor(y[whichNa],GibbsIhmu$yhat[whichNa,])
+[1] 0.7471006
+ cor(y[whichNa],GibbsIhmuyc$yhat[whichNa,])
+[1] 0.783637
+cor(y[whichNa],GibbsIh0$yhat[whichNa,])
+[1] 0.7927549
+```</p></blockquote>
+
+<p>Now, that's introduce another model, to avoid the confounding effect among mu and h, we set h[0]=0, and only estimate all other h. The new model is y=mu+g+h+bh+e, where h~N(0,H\sigma<sup>2</sup>_h), and we ask h[0] to be 0.</p>
+
+<p>Check the model convergence
+<code>R
+GibbsIh10=GibbsFWh10(y=y,VAR=VAR,ENV=ENV,saveAt="GibbsIh10")
+load("GibbsIh10samps.rda")
+png("traceFWh10.png")
+plot(samps[,c('mu','h[1]','h[2]','b[1]','b[2]','var_e')],density=F)
+dev.off()
+</code>
+The var_b
+```R</p>
+
+<blockquote><p>GibbsIh10$var_b
+    Init1
+0.0683286
+```
+The trace plot for GibbsFWh10
+<img src="https://lian0090.github.io/FWd/traceFWh10.png" alt="trace plot for GibbsFWh10" /></p></blockquote>
+
+<p>Compare with the original full model GibbsFWh0
+The trace plot for GibbsFWh0
+<code>R
+setwd("/Users/lianlian/Dropbox/github/lian0090.github.io/FWd"
+png("traceFWh0.png")
+plot(samps[,c('mu','h[1]','h[2]','b[1]','b[2]','var_e')],density=F)
+dev.off()
+</code>
+The trace plot for GibbsFWh0
+<img src="https://lian0090.github.io/FWd/traceFWh0.png" alt="trace plot for GibbsFWh0" /></p>
+
+<p>The new model's prediction accuracy, it is even better than the original model.
+<code>R
+GibbsIh10=GibbsFWh10(y=yNA,VAR=VAR,ENV=ENV, seed=12345)
+cor(y[whichNa],GibbsIh10$yhat[whichNa,])
+[1] 0.7968909
+</code></p>
+
+<p>Now, check the GibbsFWh10 model on the use the genomic matrix
+<code>R
+GibbsAh0=GibbsFWh0(y=yNA,VAR=VAR,ENV=ENV,saveAt="GibbsAh0",A=wheat.G,seed=12345)
+GibbsAh10=GibbsFWh10(y=yNA,VAR=VAR,ENV=ENV, saveAt="GibbsAh10",A=wheat.G,seed=12345)
+</code>
+results
+```R</p>
+
+<blockquote><p>cor(y[whichNa],GibbsAh0$yhat[whichNa,])
+[1] 0.8055785
+ cor(y[whichNa],GibbsAh10$yhat[whichNa,])
+[1] 0.8075624
+```</p></blockquote>
+
+<pre><code>load("GibbsAh10samps.rda")
+png("traceFWAh10.png")
+plot(samps[,c('mu','h[1]','h[2]','var_e')],density=F)
+dev.off()
+</code></pre>
+
+<p>The trace plot for GibbsFWAh10
+<img src="https://lian0090.github.io/FWd/traceFWAh10.png" alt="trace plot for GibbsFWAh0" /></p>
+
+
+    <script type="text/javascript">
+        $(function(){
+            $('.home-follow').click(function(e){
+                e.preventDefault();
+
+                if($('.home-contact').is(':visible')){
+                    $('.home-contact').slideUp(100);
+                }else{
+                    $('.home-contact').slideDown(100);
+                }
+            });
+        })
+    </script>
+
+</body>
+</html>
