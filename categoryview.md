@@ -2,7 +2,7 @@
     layout: page
     title: Post by Category
     permalink: /categoryview/
-    sitemap: true
+    sitemap: false
     ---
     
 <div>
