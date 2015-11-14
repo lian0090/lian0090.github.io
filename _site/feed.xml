@@ -7,6 +7,257 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Output random effects estimates from SKAT.</title>
+        <description>&lt;!--mathJax  --&gt;
+
+&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+MathJax.Hub.Config({
+tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]}
+});
+&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;path-to-mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot;
+src=&quot;//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;Output random effects estimates from SKAT. 
+$$\hat{\beta}=GZ&amp;#39;V^{-1}(y-X\hat\alpha)$$&lt;/p&gt;
+
+&lt;p&gt;G=diag($\tau&lt;em&gt;d$,$\Gamma$), Z=($Z&lt;/em&gt;d$,W)&lt;/p&gt;
+
+&lt;p&gt;$$V^{-1}=V&lt;em&gt;d^{-1}-V&lt;/em&gt;d^{-1}WC&lt;em&gt;\Gamma W&amp;#39;V&lt;/em&gt;d^{-1}$$&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;$$Z&amp;#39;V^{-1}(y-X\hat\alpha)=Z&lt;em&gt;d&amp;#39;V^{-1}(y-X\hat\alpha)+\underbrace{WV^{-1}(y-X\hat\alpha)}&lt;/em&gt;{\text{calculated}}$$&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$Z&lt;em&gt;d&amp;#39;V^{-1}(y-X\hat{\alpha})=Z&lt;/em&gt;d&amp;#39;V&lt;em&gt;d^{-1}(y-X\hat\alpha)-Z&lt;/em&gt;d&amp;#39;V&lt;em&gt;d^{-1}WC&lt;/em&gt;{\Gamma} W&amp;#39;V_d^{-1}(y-X\hat\alpha)$&lt;/li&gt;
+&lt;li&gt;$Z_d$ low rank
+
+&lt;ul&gt;
+&lt;li&gt;$Z&lt;em&gt;d&amp;#39;V&lt;/em&gt;d^{-1}(y-X\hat\alpha)=Z&lt;em&gt;d&amp;#39;U&lt;/em&gt;1D&lt;em&gt;{\tau}U&lt;/em&gt;1&amp;#39;(y-X\hat\alpha)+Z_d&amp;#39;(y-X\hat\alpha)/\sigma^2$&lt;/li&gt;
+&lt;li&gt;$Z&lt;em&gt;d&amp;#39;V&lt;/em&gt;d^{-1}W$&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;$Z_d$ full rank&lt;/li&gt;
+&lt;li&gt;$Z&lt;em&gt;d&amp;#39;V&lt;/em&gt;d^{-1}(y-X\hat\alpha)$ =$Z_d&amp;#39;UD^# U&amp;#39;(y-X\hat\alpha)$&lt;/li&gt;
+&lt;li&gt;$Z&lt;em&gt;d&amp;#39;V&lt;/em&gt;d^{-1}W$&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 27 Sep 2015 00:00:00 -0400</pubDate>
+        <link>/Output-random-effects-from-SKAT/</link>
+        <guid isPermaLink="true">/Output-random-effects-from-SKAT/</guid>
+      </item>
+    
+      <item>
+        <title>mixing in FWh0</title>
+        <description>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-R&quot; data-lang=&quot;R&quot;&gt;bh&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;NULL&lt;/span&gt;
+colnamesbh&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;NULL&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;i &lt;span class=&quot;kr&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;j &lt;span class=&quot;kr&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+bh&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;cbind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;bh&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;samps&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][,&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;paste&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;b[&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;i&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;]&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;sep&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;samps&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][,&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;paste&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;h[&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;j&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;]&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;sep&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)])&lt;/span&gt;
+colnamesbh&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;colnamesbh&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;paste&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;b&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;i&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;h&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;j&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;sep&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kp&quot;&gt;colnames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;bh&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;colnamesbh
+bh&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;mcmc.list&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;as.mcmc&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;bh&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;bh&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;density&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/13898422/FWd/mixing%20on%20bh%20and%20yhat%20from%20GibbsFWh0/tracebh.pdf&quot; alt=&quot;trace of b1h1&quot;&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 10 Sep 2015 00:00:00 -0400</pubDate>
+        <link>/mixing-in-FWh0/</link>
+        <guid isPermaLink="true">/mixing-in-FWh0/</guid>
+      </item>
+    
+      <item>
+        <title>rpy2</title>
+        <description>&lt;h1&gt;rpy2&lt;/h1&gt;
+
+&lt;h2&gt;Install&lt;/h2&gt;
+
+&lt;p&gt;I have to do the following to allow pytyhon to correctly load rpy2
+python setup.py build_ext --ignore-check-rversion install&lt;/p&gt;
+
+&lt;p&gt;On msi, easy_install and pip will not work. They have problems loading -lpython2.7. However, the above manual install works.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;R RHOME: this gives the RHOME
+/soft/R/3.1.0/lib64/R
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;you can find libR.so in soft/R/3.1.0/lib64/R/lib
+Then add this line to .bash&lt;em&gt;profile
+```
+LD&lt;/em&gt;LIBRARY&lt;em&gt;PATH=${LD&lt;/em&gt;LIBRARY_PATH}:soft/R/3.1.0/lib64/R/lib
+```&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/home/bernardo/lianl0/python/rpy2-2.4.1-py2.6-linux-x86_64.egg/rpy2/rinterface/_rinterface.so: undefined symbol: PyCapsule_CheckExact
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You need python 2.7, because python 2.6 does not have PyCapsule&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;which python
+Data types
+import rpy2.robjects as robjects
+robjects.r(&amp;#39;cat(&amp;quot;I am good\n&amp;quot;, c(1:10),&amp;quot;\n\n&amp;quot;)&amp;#39;)
+robjects.StrVector([&amp;#39;abc&amp;#39;, &amp;#39;def&amp;#39;])
+robjects.IntVector([1, 2, 3])
+v = robjects.FloatVector([1.1, 2.2, 3.3, 4.4, 5.5, 6.6])
+m = robjects.r[&amp;#39;matrix&amp;#39;](v, nrow = 2)
+rsum = robjects.r[&amp;#39;sum&amp;#39;]
+rsum(v)[0]
+from rpy2.robjects import FloatVector
+from rpy2.robjects.packages import importr
+import numpy as np
+lme4=importr(&amp;quot;lme4&amp;quot;)
+robjects.globalenv[&amp;quot;weight&amp;quot;] = weight
+robjects.globalenv[&amp;quot;group&amp;quot;] = group
+lm1=lme4.lmer(&amp;quot;weight~1+(1|group)&amp;quot;)
+lm1var=robjects.r.VarCorr(lm1)
+lm1var.rx[&amp;#39;group&amp;#39;]
+lm1var.rx2(&amp;#39;group&amp;#39;)
+sde=robjects.r.attributes(lm1var).rx2(&amp;#39;sc&amp;#39;)
+np.array(sde)**2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        <pubDate>Fri, 21 Aug 2015 00:00:00 -0400</pubDate>
+        <link>/rpy2/</link>
+        <guid isPermaLink="true">/rpy2/</guid>
+      </item>
+    
+      <item>
+        <title>Python memo</title>
+        <description>&lt;h1&gt;Python memo&lt;/h1&gt;
+
+&lt;h2&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;Add python search path&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;import sys
+sys.path.append(&amp;#39;/www/python/&amp;#39;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;change default installation library. Put the following lines in the ~/.pydistutils.cfg  file
+&lt;code&gt;
+[install]
+install-lib=/home/bernardo/lianl0/python
+install-purelib=lib
+install-platlib=lib.$PLAT
+install-scripts=scripts
+install-headers=python/include
+install-data=data
+&lt;/code&gt;
+install with:
+easy_install pandas&lt;/p&gt;
+
+&lt;p&gt;Or using the following command&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;module load python-epd
+cd pandas
+python setup.py install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Interactive plotting&lt;/h2&gt;
+
+&lt;p&gt;Unable to access the X Display, is DISPLAY set properly?
+&lt;code&gt;
+import matplotlib
+matplotlib.use(&amp;#39;Agg&amp;#39;) # Must be before importing matplotlib.pyplot or pylab!
+import matplotlib.pyplot as plt
+import pandas as pd
+fig = plt.figure()
+plt.plot(range(10))
+fig.savefig(&amp;#39;temp.png&amp;#39;)
+&lt;/code&gt;
+If you want this to be the default behavior, you can modify your matplotlibrc file to use the Agg backend by default. 
+&lt;code&gt;
+file is in .config/matplotlib/matplotlibrc
+find -name matplotlibrc
+&lt;/code&gt;
+open that file, put this line in the file backend: agg&lt;/p&gt;
+
+&lt;p&gt;Install packages locally
+Go to source folder 
+&lt;code&gt;
+python setup.py install --home=~/python
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2&gt;Use modules&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo easy_install pandas
+or pip install pandas
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;import pandas
+pandas.Series([4, 7, -5, 3])
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;or use the following command
+from pandas import *
+or from pandas import Series
+&lt;code&gt;
+Series([4, 7, -5, 3])
+&lt;/code&gt;
+Sometimes, when you try to import pandas, it will report ImportError: cannot import name hashtable. This might be due to the fact your current working directory contains pandas. If you change the working directory, and import pandas from there, you will be able to import it.&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;If one method does not correctly install your package, you can try another method&lt;/p&gt;
+</description>
+        <pubDate>Fri, 21 Aug 2015 00:00:00 -0400</pubDate>
+        <link>/python/</link>
+        <guid isPermaLink="true">/python/</guid>
+      </item>
+    
+      <item>
+        <title>Jekyll</title>
+        <description>&lt;h1&gt;Supported documents&lt;/h1&gt;
+
+&lt;p&gt;Jekyll supported three kind of documents. Posts, Pages and Collections&lt;/p&gt;
+
+&lt;h1&gt;Collections&lt;/h1&gt;
+
+&lt;p&gt;The files with the correct front matter are called documents. And these documents will have document.url that you can include into your markdown link. &lt;/p&gt;
+
+&lt;p&gt;The files without the correct front matter are called static files. And theses documents will not have document.url associated with them, you need to use the relative path of those documents if you want put the link of them into the index file. For example, if there is a static file test.txt, you want to reference to it in index.md, you need &lt;code&gt;[test](../test.txt)&lt;/code&gt; &lt;/p&gt;
+
+&lt;p&gt;site.categories.CATEGORY only works for posts, not for pages.&lt;/p&gt;
+
+&lt;h3&gt;list all the posts with techmemo as category&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;listPosts.txt&quot;&gt;list all the posts with techmemo as category&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://learn.andrewmunsell.com/learn/jekyll-by-example/tutorial&quot;&gt;A good tutorial&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 21 Aug 2015 00:00:00 -0400</pubDate>
+        <link>/jekyll/</link>
+        <guid isPermaLink="true">/jekyll/</guid>
+      </item>
+    
+      <item>
+        <title>bash</title>
+        <description>&lt;p&gt;comment out tag
+Comment tags &amp;lt;!-- and --&amp;gt; are used to insert comments in HTML.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 21 Aug 2015 00:00:00 -0400</pubDate>
+        <link>/html/</link>
+        <guid isPermaLink="true">/html/</guid>
+      </item>
+    
+      <item>
+        <title>bash</title>
+        <description>&lt;h1&gt;grep&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;rm $(ls|grep simulation[1-9]\.[oe])&lt;/code&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 21 Aug 2015 00:00:00 -0400</pubDate>
+        <link>/bash/</link>
+        <guid isPermaLink="true">/bash/</guid>
+      </item>
+    
+      <item>
+        <title>R</title>
+        <description>&lt;p&gt;&lt;code&gt;options(error = recover)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;tools::showNonASCII( readLines(&amp;quot;FW/man/wheat.Y.Rd&amp;quot;))&lt;/code&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 21 Aug 2015 00:00:00 -0400</pubDate>
+        <link>/R/</link>
+        <guid isPermaLink="true">/R/</guid>
+      </item>
+    
+      <item>
         <title>You&#39;re up and running!</title>
         <description>&lt;p&gt;Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).&lt;/p&gt;
 

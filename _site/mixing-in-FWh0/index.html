@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lian Lian – Lian Lian's blog</title>
+    <title>mixing in FWh0 – Lian Lian – Lian Lian's blog</title>
 
         <meta charset="utf-8" />
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
@@ -9,11 +9,36 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="Lian Lian's blog">
-    <meta property="og:description" content="Lian Lian's blog" />
+    <meta name="description" content="bh=NULL
+colnamesbh=NULL
+for(i in 1:2){
+for(j in 1:2){
+bh=cbind(bh,samps[[1]][,paste(&#39;b[&#39;,i,&#39;]&#39;,sep=&quot;&quot;)]*samps[[1]][,paste(&#39;h[&#39;,j,&#39;]&#39;,sep=&quot;&quot;)])
+colnamesbh=c(colnamesbh,paste(&quot;b&quot;,i,&quot;h&quot;,j,sep=&quot;&quot;));
+}
+}
+colnames(bh)=colnamesbh
+bh=mcmc.list(as.mcmc(bh))
+plot(bh,density=F)
+" />
+    <meta property="og:description" content="bh=NULL
+colnamesbh=NULL
+for(i in 1:2){
+for(j in 1:2){
+bh=cbind(bh,samps[[1]][,paste(&#39;b[&#39;,i,&#39;]&#39;,sep=&quot;&quot;)]*samps[[1]][,paste(&#39;h[&#39;,j,&#39;]&#39;,sep=&quot;&quot;)])
+colnamesbh=c(colnamesbh,paste(&quot;b&quot;,i,&quot;h&quot;,j,sep=&quot;&quot;));
+}
+}
+colnames(bh)=colnamesbh
+bh=mcmc.list(as.mcmc(bh))
+plot(bh,density=F)
+" />
     
     <meta name="author" content="Lian Lian" />
 
+    
+    <meta property="og:title" content="mixing in FWh0" />
+    <meta property="twitter:title" content="mixing in FWh0" />
     
 
     <!--[if lt IE 9]>
@@ -46,38 +71,11 @@
     </div>
 
     <div id="main" role="main" class="container">
-      <div class="posts">
-  
-    <article class="post">
+      <article class="post">
+  <h1>mixing in FWh0</h1>
 
-      <h1><a href="/Output-random-effects-from-SKAT/">Output random effects estimates from SKAT.</a></h1>
-
-      <div class="entry">
-        <!--mathJax  -->
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-
-<script type="text/javascript" src="path-to-mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-<script type="text/javascript"
-src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-      </div>
-
-      <a href="/Output-random-effects-from-SKAT/" class="read-more">Read More</a>
-    </article>
-  
-    <article class="post">
-
-      <h1><a href="/mixing-in-FWh0/">mixing in FWh0</a></h1>
-
-      <div class="entry">
-        <div class="highlight"><pre><code class="language-R" data-lang="R">bh<span class="o">=</span><span class="kc">NULL</span>
+  <div class="entry">
+    <div class="highlight"><pre><code class="language-R" data-lang="R">bh<span class="o">=</span><span class="kc">NULL</span>
 colnamesbh<span class="o">=</span><span class="kc">NULL</span>
 <span class="kr">for</span><span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">){</span>
 <span class="kr">for</span><span class="p">(</span>j <span class="kr">in</span> <span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">){</span>
@@ -89,104 +87,17 @@ colnamesbh<span class="o">=</span><span class="kt">c</span><span class="p">(</sp
 bh<span class="o">=</span>mcmc.list<span class="p">(</span>as.mcmc<span class="p">(</span>bh<span class="p">))</span>
 plot<span class="p">(</span>bh<span class="p">,</span>density<span class="o">=</span><span class="bp">F</span><span class="p">)</span>
 </code></pre></div>
-      </div>
+<p><img src="https://dl.dropboxusercontent.com/u/13898422/FWd/mixing%20on%20bh%20and%20yhat%20from%20GibbsFWh0/tracebh.pdf" alt="trace of b1h1"></p>
 
-      <a href="/mixing-in-FWh0/" class="read-more">Read More</a>
-    </article>
+  </div>
+
+  <div class="date">
+    Written on September 10, 2015
+  </div>
+
   
-    <article class="post">
+</article>
 
-      <h1><a href="/rpy2/">rpy2</a></h1>
-
-      <div class="entry">
-        <h1>rpy2</h1>
-
-<h2>Install</h2>
-
-<p>I have to do the following to allow pytyhon to correctly load rpy2
-python setup.py build_ext --ignore-check-rversion install</p>
-
-      </div>
-
-      <a href="/rpy2/" class="read-more">Read More</a>
-    </article>
-  
-    <article class="post">
-
-      <h1><a href="/python/">Python memo</a></h1>
-
-      <div class="entry">
-        <h1>Python memo</h1>
-
-      </div>
-
-      <a href="/python/" class="read-more">Read More</a>
-    </article>
-  
-    <article class="post">
-
-      <h1><a href="/jekyll/">Jekyll</a></h1>
-
-      <div class="entry">
-        <h1>Supported documents</h1>
-
-<p>Jekyll supported three kind of documents. Posts, Pages and Collections</p>
-
-      </div>
-
-      <a href="/jekyll/" class="read-more">Read More</a>
-    </article>
-  
-    <article class="post">
-
-      <h1><a href="/html/">bash</a></h1>
-
-      <div class="entry">
-        <p>comment out tag
-Comment tags &lt;!-- and --&gt; are used to insert comments in HTML.</p>
-
-      </div>
-
-      <a href="/html/" class="read-more">Read More</a>
-    </article>
-  
-    <article class="post">
-
-      <h1><a href="/bash/">bash</a></h1>
-
-      <div class="entry">
-        <h1>grep</h1>
-
-      </div>
-
-      <a href="/bash/" class="read-more">Read More</a>
-    </article>
-  
-    <article class="post">
-
-      <h1><a href="/R/">R</a></h1>
-
-      <div class="entry">
-        <p><code>options(error = recover)</code></p>
-
-      </div>
-
-      <a href="/R/" class="read-more">Read More</a>
-    </article>
-  
-    <article class="post">
-
-      <h1><a href="/Hello-World/">You're up and running!</a></h1>
-
-      <div class="entry">
-        <p>Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).</p>
-
-      </div>
-
-      <a href="/Hello-World/" class="read-more">Read More</a>
-    </article>
-  
-</div>
     </div>
 
     <div class="wrapper-footer">

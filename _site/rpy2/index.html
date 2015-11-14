@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>rpy2 – Lian Lian – Lian Lian's blog</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="rpy2
+
+Install
+
+I have to do the following to allow pytyhon to correctly load rpy2
+python setup.py build_ext --ignore-check-rversion install
+" />
+    <meta property="og:description" content="rpy2
+
+Install
+
+I have to do the following to allow pytyhon to correctly load rpy2
+python setup.py build_ext --ignore-check-rversion install
+" />
+    
+    <meta name="author" content="Lian Lian" />
+
+    
+    <meta property="og:title" content="rpy2" />
+    <meta property="twitter:title" content="rpy2" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Lian Lian - Lian Lian's blog" href="/feed.xml" />
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="https://raw.githubusercontent.com/lian0090/lian0090.github.io/master/images/lianlian.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Lian Lian</a></h1>
+            <p class="site-description">Lian Lian's blog</p>
+          </div>
+
+          <nav>
+            <a href="/">Blog</a>
+            <a href="/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>rpy2</h1>
+
+  <div class="entry">
+    <h1>rpy2</h1>
+
+<h2>Install</h2>
+
+<p>I have to do the following to allow pytyhon to correctly load rpy2
+python setup.py build_ext --ignore-check-rversion install</p>
+
+<p>On msi, easy_install and pip will not work. They have problems loading -lpython2.7. However, the above manual install works.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">R RHOME: this gives the RHOME
+/soft/R/3.1.0/lib64/R
+</code></pre></div>
+<p>you can find libR.so in soft/R/3.1.0/lib64/R/lib
+Then add this line to .bash<em>profile
+```
+LD</em>LIBRARY<em>PATH=${LD</em>LIBRARY_PATH}:soft/R/3.1.0/lib64/R/lib
+```</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/home/bernardo/lianl0/python/rpy2-2.4.1-py2.6-linux-x86_64.egg/rpy2/rinterface/_rinterface.so: undefined symbol: PyCapsule_CheckExact
+</code></pre></div>
+<p>You need python 2.7, because python 2.6 does not have PyCapsule</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">which python
+Data types
+import rpy2.robjects as robjects
+robjects.r(&#39;cat(&quot;I am good\n&quot;, c(1:10),&quot;\n\n&quot;)&#39;)
+robjects.StrVector([&#39;abc&#39;, &#39;def&#39;])
+robjects.IntVector([1, 2, 3])
+v = robjects.FloatVector([1.1, 2.2, 3.3, 4.4, 5.5, 6.6])
+m = robjects.r[&#39;matrix&#39;](v, nrow = 2)
+rsum = robjects.r[&#39;sum&#39;]
+rsum(v)[0]
+from rpy2.robjects import FloatVector
+from rpy2.robjects.packages import importr
+import numpy as np
+lme4=importr(&quot;lme4&quot;)
+robjects.globalenv[&quot;weight&quot;] = weight
+robjects.globalenv[&quot;group&quot;] = group
+lm1=lme4.lmer(&quot;weight~1+(1|group)&quot;)
+lm1var=robjects.r.VarCorr(lm1)
+lm1var.rx[&#39;group&#39;]
+lm1var.rx2(&#39;group&#39;)
+sde=robjects.r.attributes(lm1var).rx2(&#39;sc&#39;)
+np.array(sde)**2
+</code></pre></div>
+  </div>
+
+  <div class="date">
+    Written on August 21, 2015
+  </div>
+
+  
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+
+
+
+<a href="https://github.com/lian0090"><i class="svg-icon github"></i></a>
+
+
+
+
+
+
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+  </body>
+</html>

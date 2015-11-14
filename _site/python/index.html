@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python memo – Lian Lian – Lian Lian's blog</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="Python memo
+" />
+    <meta property="og:description" content="Python memo
+" />
+    
+    <meta name="author" content="Lian Lian" />
+
+    
+    <meta property="og:title" content="Python memo" />
+    <meta property="twitter:title" content="Python memo" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Lian Lian - Lian Lian's blog" href="/feed.xml" />
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="https://raw.githubusercontent.com/lian0090/lian0090.github.io/master/images/lianlian.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Lian Lian</a></h1>
+            <p class="site-description">Lian Lian's blog</p>
+          </div>
+
+          <nav>
+            <a href="/">Blog</a>
+            <a href="/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>Python memo</h1>
+
+  <div class="entry">
+    <h1>Python memo</h1>
+
+<h2>Installation</h2>
+
+<p>Add python search path</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">import sys
+sys.path.append(&#39;/www/python/&#39;)
+</code></pre></div>
+<p>change default installation library. Put the following lines in the ~/.pydistutils.cfg  file
+<code>
+[install]
+install-lib=/home/bernardo/lianl0/python
+install-purelib=lib
+install-platlib=lib.$PLAT
+install-scripts=scripts
+install-headers=python/include
+install-data=data
+</code>
+install with:
+easy_install pandas</p>
+
+<p>Or using the following command</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">module load python-epd
+cd pandas
+python setup.py install
+</code></pre></div>
+<h2>Interactive plotting</h2>
+
+<p>Unable to access the X Display, is DISPLAY set properly?
+<code>
+import matplotlib
+matplotlib.use(&#39;Agg&#39;) # Must be before importing matplotlib.pyplot or pylab!
+import matplotlib.pyplot as plt
+import pandas as pd
+fig = plt.figure()
+plt.plot(range(10))
+fig.savefig(&#39;temp.png&#39;)
+</code>
+If you want this to be the default behavior, you can modify your matplotlibrc file to use the Agg backend by default. 
+<code>
+file is in .config/matplotlib/matplotlibrc
+find -name matplotlibrc
+</code>
+open that file, put this line in the file backend: agg</p>
+
+<p>Install packages locally
+Go to source folder 
+<code>
+python setup.py install --home=~/python
+</code></p>
+
+<h2>Use modules</h2>
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo easy_install pandas
+or pip install pandas
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">import pandas
+pandas.Series([4, 7, -5, 3])
+</code></pre></div>
+<p>or use the following command
+from pandas import *
+or from pandas import Series
+<code>
+Series([4, 7, -5, 3])
+</code>
+Sometimes, when you try to import pandas, it will report ImportError: cannot import name hashtable. This might be due to the fact your current working directory contains pandas. If you change the working directory, and import pandas from there, you will be able to import it.</p></p>
+
+<p>If one method does not correctly install your package, you can try another method</p>
+
+  </div>
+
+  <div class="date">
+    Written on August 21, 2015
+  </div>
+
+  
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+
+
+
+<a href="https://github.com/lian0090"><i class="svg-icon github"></i></a>
+
+
+
+
+
+
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+  </body>
+</html>

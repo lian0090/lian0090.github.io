@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>/Output-random-effects-from-SKAT/</loc>
+    <lastmod>2015-09-27T00:00:00-04:00</lastmod>
+  </url>
+  <url>
+    <loc>/mixing-in-FWh0/</loc>
+    <lastmod>2015-09-10T00:00:00-04:00</lastmod>
+  </url>
+  <url>
+    <loc>/rpy2/</loc>
+    <lastmod>2015-08-21T00:00:00-04:00</lastmod>
+  </url>
+  <url>
+    <loc>/python/</loc>
+    <lastmod>2015-08-21T00:00:00-04:00</lastmod>
+  </url>
+  <url>
+    <loc>/jekyll/</loc>
+    <lastmod>2015-08-21T00:00:00-04:00</lastmod>
+  </url>
+  <url>
+    <loc>/html/</loc>
+    <lastmod>2015-08-21T00:00:00-04:00</lastmod>
+  </url>
+  <url>
+    <loc>/bash/</loc>
+    <lastmod>2015-08-21T00:00:00-04:00</lastmod>
+  </url>
+  <url>
+    <loc>/R/</loc>
+    <lastmod>2015-08-21T00:00:00-04:00</lastmod>
+  </url>
+  <url>
     <loc>/Hello-World/</loc>
     <lastmod>2014-03-03T00:00:00-05:00</lastmod>
   </url>
