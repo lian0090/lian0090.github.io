@@ -1,13 +1,8 @@
 ---
 title: Output random effects estimates from SKAT. 
-categories: [techmemo,python]
-tags: [techmemo,python]
+categories: [SKAT]
 layout: post
 ---
-
-<!--mathJax  -->
-
-
 
 Output random effects estimates from SKAT. 
 $\hat{\beta}=GZ'V^{-1}(y-X\hat\alpha)$
