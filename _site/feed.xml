@@ -8,29 +8,20 @@
     
       <item>
         <title>Output random effects estimates from SKAT.</title>
-        <description>&lt;!--mathJax  --&gt;
-
-&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
-MathJax.Hub.Config({
-tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]}
-});
+        <description>&lt;script type=&quot;text/javascript&quot;
+src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
 &lt;/script&gt;
 
-&lt;script type=&quot;text/javascript&quot; src=&quot;path-to-mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;&lt;/script&gt;
+&lt;p&gt;Output random effects estimates from SKAT. &lt;/p&gt;
 
-&lt;script type=&quot;text/javascript&quot;
-src=&quot;//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
-&lt;/script&gt;
-
-&lt;p&gt;Output random effects estimates from SKAT. 
-$$\hat{\beta}=GZ&amp;#39;V^{-1}(y-X\hat\alpha)$$&lt;/p&gt;
+&lt;p&gt;$\hat{\beta}=GZ&amp;#39;V^{-1}(y-X\hat\alpha)$&lt;/p&gt;
 
 &lt;p&gt;G=diag($\tau&lt;em&gt;d$,$\Gamma$), Z=($Z&lt;/em&gt;d$,W)&lt;/p&gt;
 
-&lt;p&gt;$$V^{-1}=V&lt;em&gt;d^{-1}-V&lt;/em&gt;d^{-1}WC&lt;em&gt;\Gamma W&amp;#39;V&lt;/em&gt;d^{-1}$$&lt;/p&gt;
+&lt;p&gt;$V^{-1}=V&lt;em&gt;d^{-1}-V&lt;/em&gt;d^{-1}WC&lt;em&gt;\Gamma W&amp;#39;V&lt;/em&gt;d^{-1}$&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;$$Z&amp;#39;V^{-1}(y-X\hat\alpha)=Z&lt;em&gt;d&amp;#39;V^{-1}(y-X\hat\alpha)+\underbrace{WV^{-1}(y-X\hat\alpha)}&lt;/em&gt;{\text{calculated}}$$&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;$Z&amp;#39;V^{-1}(y-X\hat\alpha)=Z&lt;em&gt;d&amp;#39;V^{-1}(y-X\hat\alpha)+\underbrace{WV^{-1}(y-X\hat\alpha)}&lt;/em&gt;{\text{calculated}}$&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;$Z&lt;em&gt;d&amp;#39;V^{-1}(y-X\hat{\alpha})=Z&lt;/em&gt;d&amp;#39;V&lt;em&gt;d^{-1}(y-X\hat\alpha)-Z&lt;/em&gt;d&amp;#39;V&lt;em&gt;d^{-1}WC&lt;/em&gt;{\Gamma} W&amp;#39;V_d^{-1}(y-X\hat\alpha)$&lt;/li&gt;
@@ -196,7 +187,7 @@ Sometimes, when you try to import pandas, it will report ImportError: cannot imp
       </item>
     
       <item>
-        <title>Jekyll</title>
+        <title>jekyll</title>
         <description>&lt;h1&gt;Supported documents&lt;/h1&gt;
 
 &lt;p&gt;Jekyll supported three kind of documents. Posts, Pages and Collections&lt;/p&gt;

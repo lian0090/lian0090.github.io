@@ -4,6 +4,10 @@ categories: [SKAT]
 layout: post
 ---
 
+<script type="text/javascript"
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 Output random effects estimates from SKAT. 
 
 $\hat{\beta}=GZ'V^{-1}(y-X\hat\alpha)$
