@@ -5,6 +5,7 @@ layout: post
 ---
 
 Output random effects estimates from SKAT. 
+
 $\hat{\beta}=GZ'V^{-1}(y-X\hat\alpha)$
 
 G=diag($\tau_d$,$\Gamma$), Z=($Z_d$,W)
