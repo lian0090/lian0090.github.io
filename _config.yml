@@ -2,7 +2,7 @@
 # This file contains configuration flags to customize your site
 #
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 permalink: /:title/
 
 # Name of your site (displayed in the header)
@@ -82,3 +82,4 @@ exclude:
     - README.md
     - CNAME
     - drafts
+    - archive
