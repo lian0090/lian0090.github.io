@@ -77,12 +77,13 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
 <p>##Installation
 Add python search path</p>
 
-<pre><code>import sys
+<div class="highlighter-rouge"><pre class="highlight"><code>import sys
 sys.path.append('/www/python/')
 </code></pre>
+</div>
 
 <p>change default installation library. Put the following lines in the ~/.pydistutils.cfg  file</p>
-<pre><code>[install]
+<div class="highlighter-rouge"><pre class="highlight"><code>[install]
 install-lib=/home/bernardo/lianl0/python
 install-purelib=lib
 install-platlib=lib.$PLAT
@@ -90,18 +91,20 @@ install-scripts=scripts
 install-headers=python/include
 install-data=data
 </code></pre>
+</div>
 <p>install with:
 easy_install pandas</p>
 
 <p>Or using the following command</p>
 
-<pre><code>module load python-epd
+<div class="highlighter-rouge"><pre class="highlight"><code>module load python-epd
 cd pandas
 python setup.py install
 </code></pre>
+</div>
 <p>##Interactive plotting
 Unable to access the X Display, is DISPLAY set properly?</p>
-<pre><code>import matplotlib
+<div class="highlighter-rouge"><pre class="highlight"><code>import matplotlib
 matplotlib.use('Agg') # Must be before importing matplotlib.pyplot or pylab!
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -109,29 +112,35 @@ fig = plt.figure()
 plt.plot(range(10))
 fig.savefig('temp.png')
 </code></pre>
+</div>
 <p>If you want this to be the default behavior, you can modify your matplotlibrc file to use the Agg backend by default.</p>
-<pre><code>file is in .config/matplotlib/matplotlibrc
+<div class="highlighter-rouge"><pre class="highlight"><code>file is in .config/matplotlib/matplotlibrc
 find -name matplotlibrc
 </code></pre>
+</div>
 <p>open that file, put this line in the file backend: agg</p>
 
 <p>Install packages locally
 Go to source folder</p>
-<pre><code>python setup.py install --home=~/python
+<div class="highlighter-rouge"><pre class="highlight"><code>python setup.py install --home=~/python
 </code></pre>
+</div>
 <p>##Use modules</p>
-<pre><code>sudo easy_install pandas
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo easy_install pandas
 or pip install pandas
 </code></pre>
+</div>
 
-<pre><code>import pandas
+<div class="highlighter-rouge"><pre class="highlight"><code>import pandas
 pandas.Series([4, 7, -5, 3])
 </code></pre>
+</div>
 <p>or use the following command
 from pandas import *
 or from pandas import Series</p>
-<pre><code>Series([4, 7, -5, 3])
+<div class="highlighter-rouge"><pre class="highlight"><code>Series([4, 7, -5, 3])
 </code></pre>
+</div>
 <p>Sometimes, when you try to import pandas, it will report ImportError: cannot import name hashtable. This might be due to the fact your current working directory contains pandas. If you change the working directory, and import pandas from there, you will be able to import it.&lt;/p&gt;</p>
 
 <p>If one method does not correctly install your package, you can try another method</p>

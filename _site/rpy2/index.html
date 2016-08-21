@@ -88,20 +88,23 @@ python setup.py build_ext –ignore-check-rversion install</p>
 
 <p>On msi, easy_install and pip will not work. They have problems loading -lpython2.7. However, the above manual install works.</p>
 
-<pre><code>R RHOME: this gives the RHOME
+<div class="highlighter-rouge"><pre class="highlight"><code>R RHOME: this gives the RHOME
 /soft/R/3.1.0/lib64/R
 </code></pre>
+</div>
 <p>you can find libR.so in soft/R/3.1.0/lib64/R/lib
 Then add this line to .bash_profile</p>
-<pre><code>LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:soft/R/3.1.0/lib64/R/lib
+<div class="highlighter-rouge"><pre class="highlight"><code>LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:soft/R/3.1.0/lib64/R/lib
 </code></pre>
+</div>
 
-<pre><code>/home/bernardo/lianl0/python/rpy2-2.4.1-py2.6-linux-x86_64.egg/rpy2/rinterface/_rinterface.so: undefined symbol: PyCapsule_CheckExact
+<div class="highlighter-rouge"><pre class="highlight"><code>/home/bernardo/lianl0/python/rpy2-2.4.1-py2.6-linux-x86_64.egg/rpy2/rinterface/_rinterface.so: undefined symbol: PyCapsule_CheckExact
 </code></pre>
+</div>
 
 <p>You need python 2.7, because python 2.6 does not have PyCapsule</p>
 
-<pre><code>which python
+<div class="highlighter-rouge"><pre class="highlight"><code>which python
 Data types
 import rpy2.robjects as robjects
 robjects.r('cat("I am good\n", c(1:10),"\n\n")')
@@ -124,6 +127,7 @@ lm1var.rx2('group')
 sde=robjects.r.attributes(lm1var).rx2('sc')
 np.array(sde)**2
 </code></pre>
+</div>
 
   </div>
 

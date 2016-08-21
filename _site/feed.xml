@@ -43,19 +43,20 @@
     
       <item>
         <title>mixing in FWh0</title>
-        <description>&lt;pre&gt;&lt;code class=&quot;language-R&quot;&gt;bh=NULL
-colnamesbh=NULL
-for(i in 1:2){
-for(j in 1:2){
-bh=cbind(bh,samps[[1]][,paste('b[',i,']',sep=&quot;&quot;)]*samps[[1]][,paste('h[',j,']',sep=&quot;&quot;)])
-colnamesbh=c(colnamesbh,paste(&quot;b&quot;,i,&quot;h&quot;,j,sep=&quot;&quot;));
-}
-}
-colnames(bh)=colnamesbh
-bh=mcmc.list(as.mcmc(bh))
-plot(bh,density=F)
+        <description>&lt;div class=&quot;language-R highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;bh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colnamesbh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cbind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;samps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;paste&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'b['&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;']'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;samps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;paste&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'h['&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;']'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)])&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colnamesbh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colnamesbh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;paste&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;b&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;h&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colnames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colnamesbh&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mcmc.list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;as.mcmc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;density&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/13898422/FWd/mixing%20on%20bh%20and%20yhat%20from%20GibbsFWh0/tracebh.pdf&quot; alt=&quot;trace of b1h1&quot; /&gt;&lt;/p&gt;
 
@@ -75,20 +76,23 @@ python setup.py build_ext –ignore-check-rversion install&lt;/p&gt;
 
 &lt;p&gt;On msi, easy_install and pip will not work. They have problems loading -lpython2.7. However, the above manual install works.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;R RHOME: this gives the RHOME
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;R RHOME: this gives the RHOME
 /soft/R/3.1.0/lib64/R
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;you can find libR.so in soft/R/3.1.0/lib64/R/lib
 Then add this line to .bash_profile&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:soft/R/3.1.0/lib64/R/lib
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:soft/R/3.1.0/lib64/R/lib
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;pre&gt;&lt;code&gt;/home/bernardo/lianl0/python/rpy2-2.4.1-py2.6-linux-x86_64.egg/rpy2/rinterface/_rinterface.so: undefined symbol: PyCapsule_CheckExact
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/home/bernardo/lianl0/python/rpy2-2.4.1-py2.6-linux-x86_64.egg/rpy2/rinterface/_rinterface.so: undefined symbol: PyCapsule_CheckExact
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;You need python 2.7, because python 2.6 does not have PyCapsule&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;which python
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;which python
 Data types
 import rpy2.robjects as robjects
 robjects.r('cat(&quot;I am good\n&quot;, c(1:10),&quot;\n\n&quot;)')
@@ -111,6 +115,7 @@ lm1var.rx2('group')
 sde=robjects.r.attributes(lm1var).rx2('sc')
 np.array(sde)**2
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 </description>
         <pubDate>Fri, 21 Aug 2015 00:00:00 -0400</pubDate>
         <link>/rpy2/</link>
@@ -124,12 +129,13 @@ np.array(sde)**2
 &lt;p&gt;##Installation
 Add python search path&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;import sys
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import sys
 sys.path.append('/www/python/')
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;change default installation library. Put the following lines in the ~/.pydistutils.cfg  file&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[install]
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[install]
 install-lib=/home/bernardo/lianl0/python
 install-purelib=lib
 install-platlib=lib.$PLAT
@@ -137,18 +143,20 @@ install-scripts=scripts
 install-headers=python/include
 install-data=data
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;install with:
 easy_install pandas&lt;/p&gt;
 
 &lt;p&gt;Or using the following command&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;module load python-epd
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;module load python-epd
 cd pandas
 python setup.py install
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;##Interactive plotting
 Unable to access the X Display, is DISPLAY set properly?&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import matplotlib
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import matplotlib
 matplotlib.use('Agg') # Must be before importing matplotlib.pyplot or pylab!
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -156,29 +164,35 @@ fig = plt.figure()
 plt.plot(range(10))
 fig.savefig('temp.png')
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;If you want this to be the default behavior, you can modify your matplotlibrc file to use the Agg backend by default.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;file is in .config/matplotlib/matplotlibrc
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;file is in .config/matplotlib/matplotlibrc
 find -name matplotlibrc
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;open that file, put this line in the file backend: agg&lt;/p&gt;
 
 &lt;p&gt;Install packages locally
 Go to source folder&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;python setup.py install --home=~/python
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python setup.py install --home=~/python
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;##Use modules&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo easy_install pandas
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo easy_install pandas
 or pip install pandas
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;pre&gt;&lt;code&gt;import pandas
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import pandas
 pandas.Series([4, 7, -5, 3])
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;or use the following command
 from pandas import *
 or from pandas import Series&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Series([4, 7, -5, 3])
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Series([4, 7, -5, 3])
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Sometimes, when you try to import pandas, it will report ImportError: cannot import name hashtable. This might be due to the fact your current working directory contains pandas. If you change the working directory, and import pandas from there, you will be able to import it.&amp;lt;/p&amp;gt;&lt;/p&gt;
 
 &lt;p&gt;If one method does not correctly install your package, you can try another method&lt;/p&gt;
@@ -197,7 +211,7 @@ Jekyll supported three kind of documents. Posts, Pages and Collections&lt;/p&gt;
 &lt;p&gt;#Collections
 The files with the correct front matter are called documents. And these documents will have document.url that you can include into your markdown link.&lt;/p&gt;
 
-&lt;p&gt;The files without the correct front matter are called static files. And theses documents will not have document.url associated with them, you need to use the relative path of those documents if you want put the link of them into the index file. For example, if there is a static file test.txt, you want to reference to it in index.md, you need &lt;code&gt;[test](../test.txt)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The files without the correct front matter are called static files. And theses documents will not have document.url associated with them, you need to use the relative path of those documents if you want put the link of them into the index file. For example, if there is a static file test.txt, you want to reference to it in index.md, you need &lt;code class=&quot;highlighter-rouge&quot;&gt;[test](../test.txt)&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;site.categories.CATEGORY only works for posts, not for pages.&lt;/p&gt;
 
@@ -233,7 +247,7 @@ Comment tags &lt;!-- and --&gt; are used to insert comments in HTML.&lt;/p&gt;
         <title>bash</title>
         <description>&lt;p&gt;#grep&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;rm $(ls|grep simulation[1-9]\.[oe])&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm $(ls|grep simulation[1-9]\.[oe])&lt;/code&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 21 Aug 2015 00:00:00 -0400</pubDate>
         <link>/bash/</link>
@@ -242,9 +256,9 @@ Comment tags &lt;!-- and --&gt; are used to insert comments in HTML.&lt;/p&gt;
     
       <item>
         <title>R</title>
-        <description>&lt;p&gt;&lt;code&gt;options(error = recover)&lt;/code&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;options(error = recover)&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;tools::showNonASCII( readLines(&quot;FW/man/wheat.Y.Rd&quot;))&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tools::showNonASCII( readLines(&quot;FW/man/wheat.Y.Rd&quot;))&lt;/code&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 21 Aug 2015 00:00:00 -0400</pubDate>
         <link>/R/</link>
