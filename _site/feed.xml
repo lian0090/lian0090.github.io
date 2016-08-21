@@ -8,15 +8,11 @@
     
       <item>
         <title>Output random effects estimates from SKAT.</title>
-        <description>&lt;script type=&quot;text/javascript&quot;
-src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
-&lt;/script&gt;
+        <description>&lt;p&gt;Output random effects estimates from SKAT. &lt;/p&gt;
 
-&lt;p&gt;Output random effects estimates from SKAT. &lt;/p&gt;
+&lt;p&gt;$$\hat{\beta}=GZ&amp;#39;V^{-1}(y-X\hat\alpha)$$&lt;/p&gt;
 
-&lt;p&gt;$\hat{\beta}=GZ&amp;#39;V^{-1}(y-X\hat\alpha)$&lt;/p&gt;
-
-&lt;p&gt;G=diag($\tau&lt;em&gt;d$,$\Gamma$), Z=($Z&lt;/em&gt;d$,W)&lt;/p&gt;
+&lt;p&gt;G=diag((\tau&lt;em&gt;d),(\Gamma)), Z=((Z&lt;/em&gt;d),W)&lt;/p&gt;
 
 &lt;p&gt;$V^{-1}=V&lt;em&gt;d^{-1}-V&lt;/em&gt;d^{-1}WC&lt;em&gt;\Gamma W&amp;#39;V&lt;/em&gt;d^{-1}$&lt;/p&gt;
 

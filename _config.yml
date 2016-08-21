@@ -50,6 +50,12 @@ url:
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: ""
 
+
+###Collections
+collections:
+  techmemo:
+    output: true  ##output true: jekyll will generate a page for each document in techmemo folder
+
 #
 # !! You don't need to change any of the configuration flags below !!
 #

@@ -4,15 +4,12 @@ categories: [SKAT]
 layout: post
 ---
 
-<script type="text/javascript"
-src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 Output random effects estimates from SKAT. 
 
-$\hat{\beta}=GZ'V^{-1}(y-X\hat\alpha)$
+$$\hat{\beta}=GZ'V^{-1}(y-X\hat\alpha)$$
 
-G=diag($\tau_d$,$\Gamma$), Z=($Z_d$,W)
+G=diag(\(\tau_d\),\(\Gamma\)), Z=(\(Z_d\),W)
 
 $V^{-1}=V_d^{-1}-V_d^{-1}WC_\Gamma W'V_d^{-1}$
 

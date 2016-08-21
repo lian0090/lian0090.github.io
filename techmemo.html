@@ -1,0 +1,10 @@
+---
+layout: page
+title: TechMemo
+---
+{% for techmemo in site.techmemo %}
+  
+    <h2>{ techmemo.title }}</h2>
+    {{ techmemo.content }}
+
+{% endfor %}
