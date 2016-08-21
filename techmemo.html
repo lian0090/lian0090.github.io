@@ -1,10 +1,20 @@
 ---
-layout: page
+layout: default
 title: TechMemo
+sitemap: true
 ---
-{% for techmemo in site.techmemo %}
-  
-    <h2>{ techmemo.title }}</h2>
-    {{ techmemo.content }}
+{% for post in site.techmemo %}
+
+<article class="post">
+
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+
+      <div class="entry">
+        {{ post.excerpt }}
+      </div>
+
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+ </article>
+
 
 {% endfor %}

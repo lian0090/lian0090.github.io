@@ -3,6 +3,10 @@ layout: default
 sitemap: true
 ---
 
+
+{% assign postsAndCollections = site.posts | concat: site.techmemo %}
+
+
 <div class="posts">
   {% for post in site.posts %}
     <article class="post">
@@ -17,3 +21,9 @@ sitemap: true
     </article>
   {% endfor %}
 </div>
+
+{% for techmemo in site.techmemo %}
+  <article class="post">
+    <h1><a href="{{ site.baseurl }}{{ techmemo.url }}">{{ techmemo.title }}</a></h1>
+  <article class="post">
+{% endfor %}
