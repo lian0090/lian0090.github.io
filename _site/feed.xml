@@ -201,6 +201,8 @@ The files with the correct front matter are called documents. And these document
 
 &lt;p&gt;site.categories.CATEGORY only works for posts, not for pages.&lt;/p&gt;
 
+&lt;p&gt;post.excerpt only works for post. If you really want to display some excerpt for collections, you need to setup up the attributes in the front matter.&lt;/p&gt;
+
 &lt;h3 id=&quot;list-all-the-posts-with-techmemo-as-category&quot;&gt;list all the posts with techmemo as category&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&quot;listPosts.txt&quot;&gt;list all the posts with techmemo as category&lt;/a&gt;&lt;/p&gt;
