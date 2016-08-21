@@ -14,29 +14,33 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="bh=NULL
+    <meta name="description" content="```R
+bh=NULL
 colnamesbh=NULL
 for(i in 1:2){
 for(j in 1:2){
-bh=cbind(bh,samps[[1]][,paste(&#39;b[&#39;,i,&#39;]&#39;,sep=&quot;&quot;)]*samps[[1]][,paste(&#39;h[&#39;,j,&#39;]&#39;,sep=&quot;&quot;)])
-colnamesbh=c(colnamesbh,paste(&quot;b&quot;,i,&quot;h&quot;,j,sep=&quot;&quot;));
+bh=cbind(bh,samps[[1]][,paste(‘b[‘,i,’]’,sep=””)]*samps[[1]][,paste(‘h[‘,j,’]’,sep=””)])
+colnamesbh=c(colnamesbh,paste(“b”,i,”h”,j,sep=””));
 }
 }
 colnames(bh)=colnamesbh
 bh=mcmc.list(as.mcmc(bh))
 plot(bh,density=F)
+
 " />
-    <meta property="og:description" content="bh=NULL
+    <meta property="og:description" content="```R
+bh=NULL
 colnamesbh=NULL
 for(i in 1:2){
 for(j in 1:2){
-bh=cbind(bh,samps[[1]][,paste(&#39;b[&#39;,i,&#39;]&#39;,sep=&quot;&quot;)]*samps[[1]][,paste(&#39;h[&#39;,j,&#39;]&#39;,sep=&quot;&quot;)])
-colnamesbh=c(colnamesbh,paste(&quot;b&quot;,i,&quot;h&quot;,j,sep=&quot;&quot;));
+bh=cbind(bh,samps[[1]][,paste(‘b[‘,i,’]’,sep=””)]*samps[[1]][,paste(‘h[‘,j,’]’,sep=””)])
+colnamesbh=c(colnamesbh,paste(“b”,i,”h”,j,sep=””));
 }
 }
 colnames(bh)=colnamesbh
 bh=mcmc.list(as.mcmc(bh))
 plot(bh,density=F)
+
 " />
     
     <meta name="author" content="Lian Lian" />
@@ -69,24 +73,16 @@ plot(bh,density=F)
                     <nav>
                         <a href="/">Blog</a>
                         <a href="/about">About</a>
+                        <a href="/techmemo">techmemo</a>
                     </nav>
                 </header>
-                <div class="grid" id="searchBar">
-                    <div>
-                        <div id="search">
-                            <form role="search" method="get" action="/search/">
-                                <input id="searchString" name="searchString"
-                                    placeholder="" type="text">
-                                    <input id="searchButton" name="googleSearchName" type="submit" value="Search">
-                                        </form>
-                        </div>
+                <div class="grid" id="searchBar">                              
                         <div id="archives">
                         </div>
                         browse by <a title="The complete archive of Lian Lian's Blog by category"
                             href="/categoryview">category</a> or <a title="The complete archive of
                                 Lian Lian's Blog by month"
-                                href="/monthview">date</a>
-                    </div>
+                                href="/monthview">date</a>              
                 </div>
             </div>
             
@@ -98,19 +94,22 @@ plot(bh,density=F)
   <h1>mixing in FWh0</h1>
 
   <div class="entry">
-    <div class="highlight"><pre><code class="language-R" data-lang="R">bh<span class="o">=</span><span class="kc">NULL</span>
-colnamesbh<span class="o">=</span><span class="kc">NULL</span>
-<span class="kr">for</span><span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">){</span>
-<span class="kr">for</span><span class="p">(</span>j <span class="kr">in</span> <span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">){</span>
-bh<span class="o">=</span><span class="kp">cbind</span><span class="p">(</span>bh<span class="p">,</span>samps<span class="p">[[</span><span class="m">1</span><span class="p">]][,</span><span class="kp">paste</span><span class="p">(</span><span class="s">&#39;b[&#39;</span><span class="p">,</span>i<span class="p">,</span><span class="s">&#39;]&#39;</span><span class="p">,</span>sep<span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)]</span><span class="o">*</span>samps<span class="p">[[</span><span class="m">1</span><span class="p">]][,</span><span class="kp">paste</span><span class="p">(</span><span class="s">&#39;h[&#39;</span><span class="p">,</span>j<span class="p">,</span><span class="s">&#39;]&#39;</span><span class="p">,</span>sep<span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)])</span>
-colnamesbh<span class="o">=</span><span class="kt">c</span><span class="p">(</span>colnamesbh<span class="p">,</span><span class="kp">paste</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">,</span>i<span class="p">,</span><span class="s">&quot;h&quot;</span><span class="p">,</span>j<span class="p">,</span>sep<span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">));</span>
-<span class="p">}</span>
-<span class="p">}</span>
-<span class="kp">colnames</span><span class="p">(</span>bh<span class="p">)</span><span class="o">=</span>colnamesbh
-bh<span class="o">=</span>mcmc.list<span class="p">(</span>as.mcmc<span class="p">(</span>bh<span class="p">))</span>
-plot<span class="p">(</span>bh<span class="p">,</span>density<span class="o">=</span><span class="bp">F</span><span class="p">)</span>
-</code></pre></div>
-<p><img src="https://dl.dropboxusercontent.com/u/13898422/FWd/mixing%20on%20bh%20and%20yhat%20from%20GibbsFWh0/tracebh.pdf" alt="trace of b1h1"></p>
+    <pre><code class="language-R">bh=NULL
+colnamesbh=NULL
+for(i in 1:2){
+for(j in 1:2){
+bh=cbind(bh,samps[[1]][,paste('b[',i,']',sep="")]*samps[[1]][,paste('h[',j,']',sep="")])
+colnamesbh=c(colnamesbh,paste("b",i,"h",j,sep=""));
+}
+}
+colnames(bh)=colnamesbh
+bh=mcmc.list(as.mcmc(bh))
+plot(bh,density=F)
+
+</code></pre>
+
+<p><img src="https://dl.dropboxusercontent.com/u/13898422/FWd/mixing%20on%20bh%20and%20yhat%20from%20GibbsFWh0/tracebh.pdf" alt="trace of b1h1" /></p>
+
 
   </div>
 

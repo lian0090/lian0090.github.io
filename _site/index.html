@@ -44,24 +44,16 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
                     <nav>
                         <a href="/">Blog</a>
                         <a href="/about">About</a>
+                        <a href="/techmemo">techmemo</a>
                     </nav>
                 </header>
-                <div class="grid" id="searchBar">
-                    <div>
-                        <div id="search">
-                            <form role="search" method="get" action="/search/">
-                                <input id="searchString" name="searchString"
-                                    placeholder="" type="text">
-                                    <input id="searchButton" name="googleSearchName" type="submit" value="Search">
-                                        </form>
-                        </div>
+                <div class="grid" id="searchBar">                              
                         <div id="archives">
                         </div>
                         browse by <a title="The complete archive of Lian Lian's Blog by category"
                             href="/categoryview">category</a> or <a title="The complete archive of
                                 Lian Lian's Blog by month"
-                                href="/monthview">date</a>
-                    </div>
+                                href="/monthview">date</a>              
                 </div>
             </div>
             
@@ -69,14 +61,18 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
         </div>
         
         <div id="main" role="main" class="container">
-            <div class="posts">
+            
+
+
+<div class="posts">
   
     <article class="post">
 
       <h1><a href="/Output-random-effects-from-SKAT/">Output random effects estimates from SKAT.</a></h1>
 
       <div class="entry">
-        <p>Output random effects estimates from SKAT. </p>
+        <p>Output random effects estimates from SKAT.</p>
+
 
       </div>
 
@@ -88,18 +84,20 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
       <h1><a href="/mixing-in-FWh0/">mixing in FWh0</a></h1>
 
       <div class="entry">
-        <div class="highlight"><pre><code class="language-R" data-lang="R">bh<span class="o">=</span><span class="kc">NULL</span>
-colnamesbh<span class="o">=</span><span class="kc">NULL</span>
-<span class="kr">for</span><span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">){</span>
-<span class="kr">for</span><span class="p">(</span>j <span class="kr">in</span> <span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">){</span>
-bh<span class="o">=</span><span class="kp">cbind</span><span class="p">(</span>bh<span class="p">,</span>samps<span class="p">[[</span><span class="m">1</span><span class="p">]][,</span><span class="kp">paste</span><span class="p">(</span><span class="s">&#39;b[&#39;</span><span class="p">,</span>i<span class="p">,</span><span class="s">&#39;]&#39;</span><span class="p">,</span>sep<span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)]</span><span class="o">*</span>samps<span class="p">[[</span><span class="m">1</span><span class="p">]][,</span><span class="kp">paste</span><span class="p">(</span><span class="s">&#39;h[&#39;</span><span class="p">,</span>j<span class="p">,</span><span class="s">&#39;]&#39;</span><span class="p">,</span>sep<span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)])</span>
-colnamesbh<span class="o">=</span><span class="kt">c</span><span class="p">(</span>colnamesbh<span class="p">,</span><span class="kp">paste</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">,</span>i<span class="p">,</span><span class="s">&quot;h&quot;</span><span class="p">,</span>j<span class="p">,</span>sep<span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">));</span>
-<span class="p">}</span>
-<span class="p">}</span>
-<span class="kp">colnames</span><span class="p">(</span>bh<span class="p">)</span><span class="o">=</span>colnamesbh
-bh<span class="o">=</span>mcmc.list<span class="p">(</span>as.mcmc<span class="p">(</span>bh<span class="p">))</span>
-plot<span class="p">(</span>bh<span class="p">,</span>density<span class="o">=</span><span class="bp">F</span><span class="p">)</span>
-</code></pre></div>
+        <p>```R
+bh=NULL
+colnamesbh=NULL
+for(i in 1:2){
+for(j in 1:2){
+bh=cbind(bh,samps[[1]][,paste(‘b[‘,i,’]’,sep=””)]*samps[[1]][,paste(‘h[‘,j,’]’,sep=””)])
+colnamesbh=c(colnamesbh,paste(“b”,i,”h”,j,sep=””));
+}
+}
+colnames(bh)=colnamesbh
+bh=mcmc.list(as.mcmc(bh))
+plot(bh,density=F)</p>
+
+
       </div>
 
       <a href="/mixing-in-FWh0/" class="read-more">Read More</a>
@@ -110,12 +108,12 @@ plot<span class="p">(</span>bh<span class="p">,</span>density<span class="o">=</
       <h1><a href="/rpy2/">rpy2</a></h1>
 
       <div class="entry">
-        <h1>rpy2</h1>
+        <h1 id="rpy2">rpy2</h1>
 
-<h2>Install</h2>
-
+<h2 id="install">Install</h2>
 <p>I have to do the following to allow pytyhon to correctly load rpy2
-python setup.py build_ext --ignore-check-rversion install</p>
+python setup.py build_ext –ignore-check-rversion install</p>
+
 
       </div>
 
@@ -127,7 +125,8 @@ python setup.py build_ext --ignore-check-rversion install</p>
       <h1><a href="/python/">Python memo</a></h1>
 
       <div class="entry">
-        <h1>Python memo</h1>
+        <p>#Python memo</p>
+
 
       </div>
 
@@ -139,9 +138,9 @@ python setup.py build_ext --ignore-check-rversion install</p>
       <h1><a href="/jekyll/">jekyll</a></h1>
 
       <div class="entry">
-        <h1>Supported documents</h1>
+        <p>#Supported documents
+Jekyll supported three kind of documents. Posts, Pages and Collections</p>
 
-<p>Jekyll supported three kind of documents. Posts, Pages and Collections</p>
 
       </div>
 
@@ -154,7 +153,7 @@ python setup.py build_ext --ignore-check-rversion install</p>
 
       <div class="entry">
         <p>comment out tag
-Comment tags &lt;!-- and --&gt; are used to insert comments in HTML.</p>
+Comment tags <!-- and --> are used to insert comments in HTML.</p>
 
       </div>
 
@@ -166,7 +165,8 @@ Comment tags &lt;!-- and --&gt; are used to insert comments in HTML.</p>
       <h1><a href="/bash/">bash</a></h1>
 
       <div class="entry">
-        <h1>grep</h1>
+        <p>#grep</p>
+
 
       </div>
 
@@ -180,6 +180,7 @@ Comment tags &lt;!-- and --&gt; are used to insert comments in HTML.</p>
       <div class="entry">
         <p><code>options(error = recover)</code></p>
 
+
       </div>
 
       <a href="/R/" class="read-more">Read More</a>
@@ -192,12 +193,19 @@ Comment tags &lt;!-- and --&gt; are used to insert comments in HTML.</p>
       <div class="entry">
         <p>Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).</p>
 
+
       </div>
 
       <a href="/Hello-World/" class="read-more">Read More</a>
     </article>
   
 </div>
+
+
+  <article class="post">
+    <h1><a href="/techmemo/tmp/">test out</a></h1>
+  <article class="post">
+
         </div>
         
         <div class="wrapper-footer">

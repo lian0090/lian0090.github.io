@@ -47,24 +47,16 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
                     <nav>
                         <a href="/">Blog</a>
                         <a href="/about">About</a>
+                        <a href="/techmemo">techmemo</a>
                     </nav>
                 </header>
-                <div class="grid" id="searchBar">
-                    <div>
-                        <div id="search">
-                            <form role="search" method="get" action="/search/">
-                                <input id="searchString" name="searchString"
-                                    placeholder="" type="text">
-                                    <input id="searchButton" name="googleSearchName" type="submit" value="Search">
-                                        </form>
-                        </div>
+                <div class="grid" id="searchBar">                              
                         <div id="archives">
                         </div>
                         browse by <a title="The complete archive of Lian Lian's Blog by category"
                             href="/categoryview">category</a> or <a title="The complete archive of
                                 Lian Lian's Blog by month"
-                                href="/monthview">date</a>
-                    </div>
+                                href="/monthview">date</a>              
                 </div>
             </div>
             
@@ -93,7 +85,8 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
 
 
   <h3><a href="/Output-random-effects-from-SKAT/" title="Output random effects estimates from SKAT.">Output random effects estimates from SKAT.<p class="date">September 27, 2015</p></a></h3>
-  <p>Output random effects estimates from SKAT. 
+  <p>Output random effects estimates from SKAT.
+
 </p>
 
 
@@ -112,11 +105,13 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
 
 
   <h3><a href="/mixing-in-FWh0/" title="mixing in FWh0">mixing in FWh0<p class="date">September 10, 2015</p></a></h3>
-  <p>bh=NULL
+  <p>```R
+bh=NULL
 colnamesbh=NULL
 for(i in 1:2){
 for(j in 1:2){
-bh=cbind(bh,samps[[1]][,paste(&#39;b[&#39;,i,&#39;]&#39;,sep=&quot;&quot;)]*samps[[1]][,paste(&#39;h[&#...</p>
+bh=cbind(bh,samps[[1]][,paste(‘b[‘,i,’]’,sep=””)]*samps[[1]][,paste(‘h[‘,j,’]’,sep=””)])
+colnamesb...</p>
 
 
 
@@ -140,9 +135,9 @@ bh=cbind(bh,samps[[1]][,paste(&#39;b[&#39;,i,&#39;]&#39;,sep=&quot;&quot;)]*samp
   <p>rpy2
 
 Install
-
 I have to do the following to allow pytyhon to correctly load rpy2
-python setup.py build_ext --ignore-check-rversion install
+python setup.py build_ext –ignore-check-rversion install
+
 </p>
 
 
@@ -161,7 +156,8 @@ python setup.py build_ext --ignore-check-rversion install
 
 
   <h3><a href="/python/" title="Python memo">Python memo<p class="date">August 21, 2015</p></a></h3>
-  <p>Python memo
+  <p>#Python memo
+
 </p>
 
 
@@ -180,9 +176,9 @@ python setup.py build_ext --ignore-check-rversion install
 
 
   <h3><a href="/jekyll/" title="jekyll">jekyll<p class="date">August 21, 2015</p></a></h3>
-  <p>Supported documents
-
+  <p>#Supported documents
 Jekyll supported three kind of documents. Posts, Pages and Collections
+
 </p>
 
 
@@ -202,7 +198,7 @@ Jekyll supported three kind of documents. Posts, Pages and Collections
 
   <h3><a href="/html/" title="bash">bash<p class="date">August 21, 2015</p></a></h3>
   <p>comment out tag
-Comment tags &lt;!-- and --&gt; are used to insert comments in HTML.
+Comment tags  are used to insert comments in HTML.
 </p>
 
 
@@ -221,7 +217,8 @@ Comment tags &lt;!-- and --&gt; are used to insert comments in HTML.
 
 
   <h3><a href="/bash/" title="bash">bash<p class="date">August 21, 2015</p></a></h3>
-  <p>grep
+  <p>#grep
+
 </p>
 
 
@@ -241,6 +238,7 @@ Comment tags &lt;!-- and --&gt; are used to insert comments in HTML.
 
   <h3><a href="/R/" title="R">R<p class="date">August 21, 2015</p></a></h3>
   <p>options(error = recover)
+
 </p>
 
 
@@ -258,7 +256,7 @@ Comment tags &lt;!-- and --&gt; are used to insert comments in HTML.
 
 
 
-</ul>
+&lt;/ul&gt;
 <h2>March 2014</h2><ul>
 
 
@@ -266,12 +264,14 @@ Comment tags &lt;!-- and --&gt; are used to insert comments in HTML.
 
   <h3><a href="/Hello-World/" title="You're up and running!">You're up and running!<p class="date">March  3, 2014</p></a></h3>
   <p>Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
+
 </p>
 
 
 
 
-</div>
+&lt;/div&gt;
+</ul></div>
 
   </div>
 </article>

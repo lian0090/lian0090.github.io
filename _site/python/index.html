@@ -14,9 +14,11 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="Python memo
+    <meta name="description" content="#Python memo
+
 " />
-    <meta property="og:description" content="Python memo
+    <meta property="og:description" content="#Python memo
+
 " />
     
     <meta name="author" content="Lian Lian" />
@@ -49,24 +51,16 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
                     <nav>
                         <a href="/">Blog</a>
                         <a href="/about">About</a>
+                        <a href="/techmemo">techmemo</a>
                     </nav>
                 </header>
-                <div class="grid" id="searchBar">
-                    <div>
-                        <div id="search">
-                            <form role="search" method="get" action="/search/">
-                                <input id="searchString" name="searchString"
-                                    placeholder="" type="text">
-                                    <input id="searchButton" name="googleSearchName" type="submit" value="Search">
-                                        </form>
-                        </div>
+                <div class="grid" id="searchBar">                              
                         <div id="archives">
                         </div>
                         browse by <a title="The complete archive of Lian Lian's Blog by category"
                             href="/categoryview">category</a> or <a title="The complete archive of
                                 Lian Lian's Blog by month"
-                                href="/monthview">date</a>
-                    </div>
+                                href="/monthview">date</a>              
                 </div>
             </div>
             
@@ -78,72 +72,70 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
   <h1>Python memo</h1>
 
   <div class="entry">
-    <h1>Python memo</h1>
+    <p>#Python memo</p>
 
-<h2>Installation</h2>
+<p>##Installation
+Add python search path</p>
 
-<p>Add python search path</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">import sys
-sys.path.append(&#39;/www/python/&#39;)
-</code></pre></div>
-<p>change default installation library. Put the following lines in the ~/.pydistutils.cfg  file
-<code>
-[install]
+<pre><code>import sys
+sys.path.append('/www/python/')
+</code></pre>
+
+<p>change default installation library. Put the following lines in the ~/.pydistutils.cfg  file</p>
+<pre><code>[install]
 install-lib=/home/bernardo/lianl0/python
 install-purelib=lib
 install-platlib=lib.$PLAT
 install-scripts=scripts
 install-headers=python/include
 install-data=data
-</code>
-install with:
+</code></pre>
+<p>install with:
 easy_install pandas</p>
 
 <p>Or using the following command</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">module load python-epd
+
+<pre><code>module load python-epd
 cd pandas
 python setup.py install
-</code></pre></div>
-<h2>Interactive plotting</h2>
-
-<p>Unable to access the X Display, is DISPLAY set properly?
-<code>
-import matplotlib
-matplotlib.use(&#39;Agg&#39;) # Must be before importing matplotlib.pyplot or pylab!
+</code></pre>
+<p>##Interactive plotting
+Unable to access the X Display, is DISPLAY set properly?</p>
+<pre><code>import matplotlib
+matplotlib.use('Agg') # Must be before importing matplotlib.pyplot or pylab!
 import matplotlib.pyplot as plt
 import pandas as pd
 fig = plt.figure()
 plt.plot(range(10))
-fig.savefig(&#39;temp.png&#39;)
-</code>
-If you want this to be the default behavior, you can modify your matplotlibrc file to use the Agg backend by default. 
-<code>
-file is in .config/matplotlib/matplotlibrc
+fig.savefig('temp.png')
+</code></pre>
+<p>If you want this to be the default behavior, you can modify your matplotlibrc file to use the Agg backend by default.</p>
+<pre><code>file is in .config/matplotlib/matplotlibrc
 find -name matplotlibrc
-</code>
-open that file, put this line in the file backend: agg</p>
+</code></pre>
+<p>open that file, put this line in the file backend: agg</p>
 
 <p>Install packages locally
-Go to source folder 
-<code>
-python setup.py install --home=~/python
-</code></p>
-
-<h2>Use modules</h2>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo easy_install pandas
+Go to source folder</p>
+<pre><code>python setup.py install --home=~/python
+</code></pre>
+<p>##Use modules</p>
+<pre><code>sudo easy_install pandas
 or pip install pandas
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">import pandas
+</code></pre>
+
+<pre><code>import pandas
 pandas.Series([4, 7, -5, 3])
-</code></pre></div>
+</code></pre>
 <p>or use the following command
 from pandas import *
-or from pandas import Series
-<code>
-Series([4, 7, -5, 3])
-</code>
-Sometimes, when you try to import pandas, it will report ImportError: cannot import name hashtable. This might be due to the fact your current working directory contains pandas. If you change the working directory, and import pandas from there, you will be able to import it.</p></p>
+or from pandas import Series</p>
+<pre><code>Series([4, 7, -5, 3])
+</code></pre>
+<p>Sometimes, when you try to import pandas, it will report ImportError: cannot import name hashtable. This might be due to the fact your current working directory contains pandas. If you change the working directory, and import pandas from there, you will be able to import it.&lt;/p&gt;</p>
 
 <p>If one method does not correctly install your package, you can try another method</p>
+
 
   </div>
 

@@ -17,16 +17,16 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
     <meta name="description" content="rpy2
 
 Install
-
 I have to do the following to allow pytyhon to correctly load rpy2
-python setup.py build_ext --ignore-check-rversion install
+python setup.py build_ext –ignore-check-rversion install
+
 " />
     <meta property="og:description" content="rpy2
 
 Install
-
 I have to do the following to allow pytyhon to correctly load rpy2
-python setup.py build_ext --ignore-check-rversion install
+python setup.py build_ext –ignore-check-rversion install
+
 " />
     
     <meta name="author" content="Lian Lian" />
@@ -59,24 +59,16 @@ python setup.py build_ext --ignore-check-rversion install
                     <nav>
                         <a href="/">Blog</a>
                         <a href="/about">About</a>
+                        <a href="/techmemo">techmemo</a>
                     </nav>
                 </header>
-                <div class="grid" id="searchBar">
-                    <div>
-                        <div id="search">
-                            <form role="search" method="get" action="/search/">
-                                <input id="searchString" name="searchString"
-                                    placeholder="" type="text">
-                                    <input id="searchButton" name="googleSearchName" type="submit" value="Search">
-                                        </form>
-                        </div>
+                <div class="grid" id="searchBar">                              
                         <div id="archives">
                         </div>
                         browse by <a title="The complete archive of Lian Lian's Blog by category"
                             href="/categoryview">category</a> or <a title="The complete archive of
                                 Lian Lian's Blog by month"
-                                href="/monthview">date</a>
-                    </div>
+                                href="/monthview">date</a>              
                 </div>
             </div>
             
@@ -88,48 +80,51 @@ python setup.py build_ext --ignore-check-rversion install
   <h1>rpy2</h1>
 
   <div class="entry">
-    <h1>rpy2</h1>
+    <h1 id="rpy2">rpy2</h1>
 
-<h2>Install</h2>
-
+<h2 id="install">Install</h2>
 <p>I have to do the following to allow pytyhon to correctly load rpy2
-python setup.py build_ext --ignore-check-rversion install</p>
+python setup.py build_ext –ignore-check-rversion install</p>
 
 <p>On msi, easy_install and pip will not work. They have problems loading -lpython2.7. However, the above manual install works.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">R RHOME: this gives the RHOME
+
+<pre><code>R RHOME: this gives the RHOME
 /soft/R/3.1.0/lib64/R
-</code></pre></div>
+</code></pre>
 <p>you can find libR.so in soft/R/3.1.0/lib64/R/lib
-Then add this line to .bash<em>profile
-```
-LD</em>LIBRARY<em>PATH=${LD</em>LIBRARY_PATH}:soft/R/3.1.0/lib64/R/lib
-```</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">/home/bernardo/lianl0/python/rpy2-2.4.1-py2.6-linux-x86_64.egg/rpy2/rinterface/_rinterface.so: undefined symbol: PyCapsule_CheckExact
-</code></pre></div>
+Then add this line to .bash_profile</p>
+<pre><code>LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:soft/R/3.1.0/lib64/R/lib
+</code></pre>
+
+<pre><code>/home/bernardo/lianl0/python/rpy2-2.4.1-py2.6-linux-x86_64.egg/rpy2/rinterface/_rinterface.so: undefined symbol: PyCapsule_CheckExact
+</code></pre>
+
 <p>You need python 2.7, because python 2.6 does not have PyCapsule</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">which python
+
+<pre><code>which python
 Data types
 import rpy2.robjects as robjects
-robjects.r(&#39;cat(&quot;I am good\n&quot;, c(1:10),&quot;\n\n&quot;)&#39;)
-robjects.StrVector([&#39;abc&#39;, &#39;def&#39;])
+robjects.r('cat("I am good\n", c(1:10),"\n\n")')
+robjects.StrVector(['abc', 'def'])
 robjects.IntVector([1, 2, 3])
 v = robjects.FloatVector([1.1, 2.2, 3.3, 4.4, 5.5, 6.6])
-m = robjects.r[&#39;matrix&#39;](v, nrow = 2)
-rsum = robjects.r[&#39;sum&#39;]
+m = robjects.r['matrix'](v, nrow = 2)
+rsum = robjects.r['sum']
 rsum(v)[0]
 from rpy2.robjects import FloatVector
 from rpy2.robjects.packages import importr
 import numpy as np
-lme4=importr(&quot;lme4&quot;)
-robjects.globalenv[&quot;weight&quot;] = weight
-robjects.globalenv[&quot;group&quot;] = group
-lm1=lme4.lmer(&quot;weight~1+(1|group)&quot;)
+lme4=importr("lme4")
+robjects.globalenv["weight"] = weight
+robjects.globalenv["group"] = group
+lm1=lme4.lmer("weight~1+(1|group)")
 lm1var=robjects.r.VarCorr(lm1)
-lm1var.rx[&#39;group&#39;]
-lm1var.rx2(&#39;group&#39;)
-sde=robjects.r.attributes(lm1var).rx2(&#39;sc&#39;)
+lm1var.rx['group']
+lm1var.rx2('group')
+sde=robjects.r.attributes(lm1var).rx2('sc')
 np.array(sde)**2
-</code></pre></div>
+</code></pre>
+
   </div>
 
   <div class="date">

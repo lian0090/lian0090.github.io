@@ -14,9 +14,11 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="Output random effects estimates from SKAT. 
+    <meta name="description" content="Output random effects estimates from SKAT.
+
 " />
-    <meta property="og:description" content="Output random effects estimates from SKAT. 
+    <meta property="og:description" content="Output random effects estimates from SKAT.
+
 " />
     
     <meta name="author" content="Lian Lian" />
@@ -49,24 +51,16 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
                     <nav>
                         <a href="/">Blog</a>
                         <a href="/about">About</a>
+                        <a href="/techmemo">techmemo</a>
                     </nav>
                 </header>
-                <div class="grid" id="searchBar">
-                    <div>
-                        <div id="search">
-                            <form role="search" method="get" action="/search/">
-                                <input id="searchString" name="searchString"
-                                    placeholder="" type="text">
-                                    <input id="searchButton" name="googleSearchName" type="submit" value="Search">
-                                        </form>
-                        </div>
+                <div class="grid" id="searchBar">                              
                         <div id="archives">
                         </div>
                         browse by <a title="The complete archive of Lian Lian's Blog by category"
                             href="/categoryview">category</a> or <a title="The complete archive of
                                 Lian Lian's Blog by month"
-                                href="/monthview">date</a>
-                    </div>
+                                href="/monthview">date</a>              
                 </div>
             </div>
             
@@ -78,30 +72,33 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
   <h1>Output random effects estimates from SKAT.</h1>
 
   <div class="entry">
-    <p>Output random effects estimates from SKAT. </p>
+    <p>Output random effects estimates from SKAT.</p>
 
-<p>$$\hat{\beta}=GZ&#39;V^{-1}(y-X\hat\alpha)$$</p>
+<script type="math/tex; mode=display">\hat{\beta}=GZ'V^{-1}(y-X\hat\alpha)</script>
 
-<p>G=diag((\tau<em>d),(\Gamma)), Z=((Z</em>d),W)</p>
+<p>G=diag((\tau_d),(\Gamma)), Z=((Z_d),W)</p>
 
-<p>$V^{-1}=V<em>d^{-1}-V</em>d^{-1}WC<em>\Gamma W&#39;V</em>d^{-1}$</p>
-
-<ul>
-<li><p>$Z&#39;V^{-1}(y-X\hat\alpha)=Z<em>d&#39;V^{-1}(y-X\hat\alpha)+\underbrace{WV^{-1}(y-X\hat\alpha)}</em>{\text{calculated}}$</p>
+<p>$V^{-1}=V_d^{-1}-V_d^{-1}WC_\Gamma W’V_d^{-1}$</p>
 
 <ul>
-<li>$Z<em>d&#39;V^{-1}(y-X\hat{\alpha})=Z</em>d&#39;V<em>d^{-1}(y-X\hat\alpha)-Z</em>d&#39;V<em>d^{-1}WC</em>{\Gamma} W&#39;V_d^{-1}(y-X\hat\alpha)$</li>
-<li>$Z_d$ low rank
-
-<ul>
-<li>$Z<em>d&#39;V</em>d^{-1}(y-X\hat\alpha)=Z<em>d&#39;U</em>1D<em>{\tau}U</em>1&#39;(y-X\hat\alpha)+Z_d&#39;(y-X\hat\alpha)/\sigma^2$</li>
-<li>$Z<em>d&#39;V</em>d^{-1}W$</li>
-</ul></li>
-<li>$Z_d$ full rank</li>
-<li>$Z<em>d&#39;V</em>d^{-1}(y-X\hat\alpha)$ =$Z_d&#39;UD^# U&#39;(y-X\hat\alpha)$</li>
-<li>$Z<em>d&#39;V</em>d^{-1}W$</li>
-</ul></li>
+  <li>
+    <p>$Z’V^{-1}(y-X\hat\alpha)=Z_d’V^{-1}(y-X\hat\alpha)+\underbrace{WV^{-1}(y-X\hat\alpha)}_{\text{calculated}}$</p>
+  </li>
+  <li>$Z_d’V^{-1}(y-X\hat{\alpha})=Z_d’V_d^{-1}(y-X\hat\alpha)-Z_d’V_d^{-1}WC_{\Gamma} W’V_d^{-1}(y-X\hat\alpha)$</li>
+  <li>$Z_d$ low rank
+    <ul>
+      <li>$Z_d’V_d^{-1}(y-X\hat\alpha)=Z_d’U_1D_{\tau}U_1’(y-X\hat\alpha)+Z_d’(y-X\hat\alpha)/\sigma^2$</li>
+      <li>$Z_d’V_d^{-1}W$</li>
+    </ul>
+  </li>
+  <li>$Z_d$ full rank
+    <ul>
+      <li>$Z_d’V_d^{-1}(y-X\hat\alpha)$ =$Z_d’UD^# U’(y-X\hat\alpha)$</li>
+      <li>$Z_d’V_d^{-1}W$</li>
+    </ul>
+  </li>
 </ul>
+
 
   </div>
 
