@@ -204,6 +204,16 @@ or from pandas import Series&lt;/p&gt;
       </item>
     
       <item>
+        <title>Mac</title>
+        <description>&lt;h1 id=&quot;spotlight&quot;&gt;Spotlight&lt;/h1&gt;
+&lt;p&gt;Hold-down the command key, then click the file you have found iin Spotlight, then, Spotlight will go to folder&lt;/p&gt;
+</description>
+        <pubDate>Fri, 21 Aug 2015 00:00:00 -0400</pubDate>
+        <link>/mac/</link>
+        <guid isPermaLink="true">/mac/</guid>
+      </item>
+    
+      <item>
         <title>jekyll</title>
         <description>&lt;p&gt;#Supported documents
 Jekyll supported three kind of documents. Posts, Pages and Collections&lt;/p&gt;
@@ -263,19 +273,6 @@ Comment tags &lt;!-- and --&gt; are used to insert comments in HTML.&lt;/p&gt;
         <pubDate>Fri, 21 Aug 2015 00:00:00 -0400</pubDate>
         <link>/R/</link>
         <guid isPermaLink="true">/R/</guid>
-      </item>
-    
-      <item>
-        <title>You're up and running!</title>
-        <description>&lt;p&gt;Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/config.png&quot; alt=&quot;_config.yml&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the &lt;a href=&quot;https://github.com/barryclark/jekyll-now&quot;&gt;Jekyll Now repository&lt;/a&gt; on GitHub.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 03 Mar 2014 00:00:00 -0500</pubDate>
-        <link>/Hello-World/</link>
-        <guid isPermaLink="true">/Hello-World/</guid>
       </item>
     
   </channel>
