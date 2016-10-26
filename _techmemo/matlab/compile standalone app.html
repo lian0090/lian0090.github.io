@@ -1,0 +1,143 @@
+---
+layout: default
+title: compile matlab into stand alone app 
+sitemap: true
+---
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Introduction</title><meta name="generator" content="MATLAB 8.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-10-25"><meta name="DC.source" content="matlab.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Introduction</h1><!--introduction--><p>matlab compiler together with matlab runtime allows a user to run a standalone app buit from matlab when he does not have matlab installed in his computer.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">References</a></li><li><a href="#4">Examples</a></li></ul></div><h2>References<a name="1"></a></h2><p><a href="http://people.maths.ox.ac.uk/gilesm/old/matlab_tips/MatlabCompilerLinux.pdf">compile matlab into standalone application</a></p><p><a href="https://www.mathworks.com/matlabcentral/answers/92537-how-do-i-pass-arguments-into-and-out-of-my-standalone-executable">pass arguments into and out of standalone executable</a></p><h2>Examples<a name="4"></a></h2><p>Here we convert a matlab function test into a standalone function through matlab compiler mcc. <i>test.m</i> is a matlab script that has a test function (three arguments, one is a numeric variable, the other two are input and output file path). Note that everything passed from command line into the standalone app is treated as a string. Therefore, we need <i>x=str2num(x)</i> to deal with the terminal input.</p><pre class="language-matlab"><span class="keyword">function</span>[] = test(x,infile,outfile);
+<span class="keyword">if</span> ischar(x)
+  x=str2num(x);
+<span class="keyword">end</span>
+load(infile);
+z=2*x+sum(a)+sum(b) <span class="comment">% Omit the semicolon after calculation to display the value on the screen</span>
+d=2*b
+save(outfile,<span class="string">'d'</span>)
+disp(z) <span class="comment">% Use DISP command to display the value of a variable explicitly</span>
+</pre><p>After you finish your function, type the following command.</p><pre class="language-matlab">mcc <span class="string">-m</span> <span class="string">-v</span> <span class="string">test.m</span>
+</pre><p>This will generate the package you neede to run matlab in the same folder as <tt>test.m</tt> (the generated documents are <tt>run_test.sh</tt> and test.app (a folder contains that matlab binary). <tt>run_test.sh</tt> is used to set up environment variables (majorly let test.app know where the matlab runtime is installed) to run the final app. matlab runtime is needed in order to run a standalone app generated from matlab. In order to use the app, it need to know where matlab runtime is installed. If you have installed matlab in your computer, type <tt>matlabroot</tt> in your command window, then it will print something like this <tt>/Applications/MATLAB_R2015b.app</tt>, this is where your matlab is installed (If you look into <tt>run_test.sh</tt>, you will notice that the runtime installation path is under <tt>${MCRROOT}/runtime/maci64</tt>)</p><p>Now, I will generate some data to use as inputfile for my test function.</p><pre class="language-matlab">a=[1,2,3,4]
+b=[5,6,7,8]
+save(<span class="string">'test.mat'</span>,a,b)
+</pre><p>Assume your standalone app is stored in a path <tt>~/Dropbox/Library/matlab/test</tt>, you can use the following command in your terminal to run the app.</p><p><tt>~/Dropbox/Library/matlab/test/run_test.sh /Applications/MATLAB_R2015b.app 5 ~/Documents/MATLAB/test.mat ~/Documents/MATLAB/testout.mat</tt></p><p>In the above code, my inputfile is <tt>~/Documents/MATLAB/test.mat</tt> and outputfile is <tt>~/Documents/MATLAB/testout.mat</tt></p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Introduction
+% matlab compiler together with matlab runtime allows a user to run a standalone app buit from matlab when he does not have matlab installed in his computer. 
+
+%% References 
+
+%%
+% <http://people.maths.ox.ac.uk/gilesm/old/matlab_tips/MatlabCompilerLinux.pdf compile matlab into standalone application>
+%%
+% <https://www.mathworks.com/matlabcentral/answers/92537-how-do-i-pass-arguments-into-and-out-of-my-standalone-executable pass arguments into and out of standalone executable>
+
+
+%% Examples
+% Here we convert a matlab function test into a standalone function through matlab compiler mcc. _test.m_ is a matlab script that has a test function (three arguments, one is a numeric variable, the other two are input and output file path). Note that everything passed from command line into the standalone app is treated as a string. Therefore, we need _x=str2num(x)_ to deal with the terminal input.
+
+%%
+% 
+%   function[] = test(x,infile,outfile);
+%   if ischar(x)
+%     x=str2num(x);
+%   end
+%   load(infile);
+%   z=2*x+sum(a)+sum(b) % Omit the semicolon after calculation to display the value on the screen
+%   d=2*b
+%   save(outfile,'d')
+%   disp(z) % Use DISP command to display the value of a variable explicitly
+% 
+
+%%
+% After you finish your function, type the following command.
+
+%%
+%   mcc -m -v test.m
+%
+%%
+% This will generate the package you neede to run matlab in the same folder as |test.m| (the generated documents are |run_test.sh| and test.app (a folder contains that matlab binary). |run_test.sh| is used to set up environment variables (majorly let test.app know where the matlab runtime is installed) to run the final app. matlab runtime is needed in order to run a standalone app generated from matlab. In order to use the app, it need to know where matlab runtime is installed. If you have installed matlab in your computer, type |matlabroot| in your command window, then it will print something like this |/Applications/MATLAB_R2015b.app|, this is where your matlab is installed (If you look into |run_test.sh|, you will notice that the runtime installation path is under |${MCRROOT}/runtime/maci64|) 
+%%
+% Now, I will generate some data to use as inputfile for my test function.
+
+%%
+%   a=[1,2,3,4]
+%   b=[5,6,7,8]
+%   save('test.mat',a,b)
+
+%%
+% Assume your standalone app is stored in a path |~/Dropbox/Library/matlab/test|, you can use the following command in your terminal to run the app. 
+
+%% 
+% |~/Dropbox/Library/matlab/test/run_test.sh /Applications/MATLAB_R2015b.app 5 ~/Documents/MATLAB/test.mat ~/Documents/MATLAB/testout.mat|
+
+%%
+% In the above code, my inputfile is |~/Documents/MATLAB/test.mat| and
+% outputfile is |~/Documents/MATLAB/testout.mat|
+
+##### SOURCE END #####
+--></body></html>
