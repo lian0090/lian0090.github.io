@@ -1,0 +1,41 @@
+---
+layout: default
+title: Hyperef url 
+---
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hyperef url</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="hyperef-url">Hyperef url</h1>
+
+<p><strong>colors</strong>, <strong>line break</strong></p>
+
+
+
+<h3 id="hyperref-colors">Hyperref Colors</h3>
+
+
+
+<pre class="prettyprint"><code class=" hljs tex"><span class="hljs-command">\documentclass</span><span class="hljs-special">{</span>article<span class="hljs-special">}</span> 
+<span class="hljs-command">\usepackage</span><span class="hljs-special">[</span>colorlinks = true,         
+    linkcolor = red,             
+   citecolor = red,            
+<span class="hljs-command">\begin</span><span class="hljs-special">{</span>document<span class="hljs-special">}</span> 
+Here is <span class="hljs-command">\href</span><span class="hljs-special">{</span>http://www.google.com<span class="hljs-special">}</span><span class="hljs-special">{</span>Google<span class="hljs-special">}</span> and <span class="hljs-command">\href</span><span class="hljs-special">{</span>http://www.yahoo.com<span class="hljs-special">}</span><span class="hljs-special">{</span>Yahoo!<span class="hljs-special">}</span>. 
+<span class="hljs-command">\end</span><span class="hljs-special">{</span>document<span class="hljs-special">}</span></code></pre>
+
+<p>Caution! if you do not add commas in-between the option items, it will not report error but the color will not work (always be black)! </p>
+
+
+
+<h3 id="how-to-break-long-url-in-an-item">How to break long url in an item</h3>
+
+
+
+<pre class="prettyprint"><code class="language-latex hljs mathematica">\usepackage[hyphenbreaks]<span class="hljs-list">{breaker}</span></code></pre></div></body>
+</html>
