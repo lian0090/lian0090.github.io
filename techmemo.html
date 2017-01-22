@@ -3,17 +3,11 @@ layout: default
 title: TechMemo
 sitemap: true
 ---
-{% for post in site.techmemo %}
-
-<article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
- </article>
 
 
+
+{% for techmemo in site.techmemo %}
+  <article class="post">
+    <h1><a href="{{ site.baseurl }}{{ techmemo.url }}">{{ techmemo.title }}</a></h1>
+  <article class="post">
 {% endfor %}
