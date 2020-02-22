@@ -1,0 +1,13 @@
+jre and jdk does not have to be downloaded and installed from orable. You can use Inteelijia IDE's built-in java bin files. Generally it is located in 
+C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.2\jbr\bin
+
+Need to edit windows JAVA_HOME, CLASSPATH and PATH environment variables in order to use java from windows commandline. See this post for details: 
+
+https://blog.csdn.net/suncold123/article/details/48392135
+
+
+# decompile jar files
+can use cfr 
+https://gist.github.com/larshaendler/b0679f6e36e487d00647e2f2a2989c0c
+or Intellija's plugin 
+https://stackoverflow.com/questions/28389006/how-to-decompile-to-java-files-intellij-idea
