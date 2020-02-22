@@ -9,5 +9,8 @@ https://blog.csdn.net/suncold123/article/details/48392135
 # decompile jar files
 can use cfr 
 https://gist.github.com/larshaendler/b0679f6e36e487d00647e2f2a2989c0c
+
+java -jar cfr-0.149.jar "Fuzzy(1).jar" --outputpath Fuzzy20191221
+
 or Intellija's plugin 
 https://stackoverflow.com/questions/28389006/how-to-decompile-to-java-files-intellij-idea
